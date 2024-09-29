@@ -1,5 +1,5 @@
 ﻿<h1 align="center">Hi 👋, I'm Rahul Kumar Bharti</h1>
-<h3 align="center">A passionate Full Stack Web Developer and Deep Learing Engineer</h3>
+<h3 align="center">A passionate Full Stack Developer and Deep Learning enthusiast, leveraging AI and web technologies to craft innovative, scalable solutions.</h3>
 
 <p align="center"> <img src="https://komarev.com/ghpvc/?username=rahulbharti5&label=Profile%20views&color=0e75b6&style=flat" alt="Rahul Kumar Bharti" /> </p>
 
