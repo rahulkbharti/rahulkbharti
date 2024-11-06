@@ -19,7 +19,7 @@
 - 🔭 I’m currently working on **College Chatbot using Deep Learning**.
 - 💬 Ask me about **Full Stack Development, Web Technologies, AI, and Deep Learning**
 - 👯 I’m looking to collaborate on **AI and Web Development projects**
-- 📫 How to reach me: **[rk2255p@gmail.com](mailto:rk2255p@gmail.com)**
+- 📫 How to reach me: <a href="https://linkedin.com/in/rahul-kumar-bharti-51b380295"><img src="https://img.shields.io/badge/-Rahul%20Bharti-blue?style=flat&logo=Linkedin&logoColor=white" alt="LinkedIn"/></a>
 
 ---
 
