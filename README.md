@@ -3,12 +3,6 @@
 
 <p align="center"> <img src="https://komarev.com/ghpvc/?username=rahulbharti5&label=Profile%20views&color=0e75b6&style=flat" alt="Rahul Kumar Bharti" /> </p>
 
-<p align="center">
-  <a href="https://linkedin.com/in/rahul-kumar-bharti-51b380295"><img src="https://img.shields.io/badge/-Rahul%20Bharti-blue?style=flat&logo=Linkedin&logoColor=white" alt="LinkedIn"/></a>
-  <a href="https://www.kaggle.com/rahulkumar0555"><img src="https://img.shields.io/badge/-Rahul%20Bharti-grey?style=flat&logo=Kaggle&logoColor=white" alt="Kaggle"/></a>
-  <a href="https://x.com/iRahul0875"><img src="https://img.shields.io/twitter/follow/rahulbharti5?style=social" alt="Twitter"/></a>
-</p>
-
 ---
 
 ### 🚀 About Me
