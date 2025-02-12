@@ -1,7 +1,7 @@
 ﻿<h1 align="center">Hi 👋, I'm Rahul Kumar Bharti</h1>
 <h3 align="center">A passionate Full Stack Developer and Deep Learning enthusiast, leveraging AI and web technologies to craft innovative, scalable solutions.</h3>
 
-<p align="center"> <img src="https://komarev.com/ghpvc/?username=rahulbharti5&label=Profile%20views&color=0e75b6&style=flat" alt="Rahul Kumar Bharti" /> </p>
+<p align="center"> <img src="https://komarev.com/ghpvc/?username=rahulkbharti&label=Profile%20views&color=0e75b6&style=flat" alt="Rahul Kumar Bharti" /> </p>
 
 ---
 
@@ -37,9 +37,9 @@
 
 ### 📊 GitHub Stats
 
-![Your GitHub Stats](https://github-readme-stats.vercel.app/api?username=rahulbharti5&show_icons=true&theme=radical)
+![Your GitHub Stats](https://github-readme-stats.vercel.app/api?username=rahulkbharti&show_icons=true&theme=radical)
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rahulbharti5&layout=compact&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rahulkbharti&layout=compact&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
 
 ---
 
