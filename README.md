@@ -1,7 +1,7 @@
 ﻿<h1 align="center">Hi 👋, I'm Rahul Kumar Bharti</h1>
 <h3 align="center">Node.js Backend Specialist | React.js Developer | Aspiring Deep Learning Engineer | Building Scalable Web Architectures</h3>
 
-<!-- <p align="center"> <img src="https://komarev.com/ghpvc/?username=rahulkbharti&label=Profile%20views&color=0e75b6&style=flat" alt="Rahul Kumar Bharti" /> </p> -->
+<p align="center"> <img src="https://komarev.com/ghpvc/?username=rahulkbharti&label=Profile%20views&color=0e75b6&style=flat" alt="Rahul Kumar Bharti" /> </p> 
 
 ---
 
@@ -81,3 +81,4 @@ I'm a **2025 B.Tech (IT) graduate** specializing in **MERN stack development** a
   <img src="https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif" width="300" alt="Coding GIF" />
 </p>
 <h4 align="left">"First, solve the problem. Then, write the code." - John Johnson</h4>
+
