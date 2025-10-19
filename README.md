@@ -1,71 +1,65 @@
-﻿<h1 align="center">Hi 👋, I'm Rahul Kumar Bharti</h1>
-<h3 align="center">Node.js Backend Specialist | React.js Developer | Aspiring Deep Learning Engineer | Building Scalable Web Architectures</h3>
-
+<h1 align="center">Hey there 👋, I'm Rahul Kumar Bharti</h1>
+<h3 align="center">Full Stack Developer | Node.js Backend Specialist | React.js Developer | Python Backend & Deep Learning Engineer</h3>
 <p align="center"> <img src="https://komarev.com/ghpvc/?username=rahulkbharti&label=Profile%20views&color=0e75b6&style=flat" alt="Rahul Kumar Bharti" /> </p> 
 
----
-
-### 🚀 About Me
-
-I'm a **2025 B.Tech (IT) graduate** specializing in **MERN stack development** and **AI/ML research**, with a focus on **Large Language Models**. My journey includes:
-
-- 🏆 **Top 0.5%** in TCS CodeVita Season 12 (Ranked #1961 globally among 440,000+ participants)
-- 💻 **2 Internships**: React.js development (3 months) & Google Cloud GenAI (2 months)
-- 🔍 **Research**: Exploring LLMs (GPT-2, BERT, BART) for conversational AI systems
-- 🚀 Built multiple **production-grade applications** using MERN stack and MySQL
 
 ---
 
-### 🛠️ Tech Stack
+### 🧠 About Me
 
-#### **Frontend**
+I'm a **Backend-Focused Full Stack Developer** passionate about crafting scalable, high-performance systems.  
+My core strength lies in building **RESTful APIs**, architecting **backend infrastructures**, and connecting them seamlessly with **modern frontends**.
 
-![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=react) ![HTML](https://img.shields.io/badge/-HTML-05122A?style=flat&logo=html5) ![CSS](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3) ![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)  
-![Material UI](https://img.shields.io/badge/-Material%20UI-05122A?style=flat&logo=material-ui) ![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-05122A?style=flat&logo=tailwind-css)  
-![Figma](https://img.shields.io/badge/-Figma-05122A?style=flat&logo=figma) ![Postman](https://img.shields.io/badge/-Postman-05122A?style=flat&logo=postman)
-![Redux](https://img.shields.io/badge/-Redux-05122A?style=flat&logo=redux) ![Vite](https://img.shields.io/badge/-Vite-05122A?style=flat&logo=vite)
+💡 I thrive in problem-solving, clean code, and learning cutting-edge tech.  
+Currently, I’m looking for a **full-time backend or full-stack role** where I can leverage my expertise in **Node.js, Express, and cloud-based microservices**.
 
-#### **Backend**
+---
 
-![Node.js](https://img.shields.io/badge/-Node.js-05122A?style=flat&logo=node.js) ![Express.js](https://img.shields.io/badge/-Express.js-05122A?style=flat&logo=express) ![MongoDB](https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb) ![MySQL](https://img.shields.io/badge/-MySQL-05122A?style=flat&logo=mysql)
+### ⚡ Tech Stack & Core Skills
 
-#### **Authentication & Security**
+- **Backend:** Node.js, Express.js, Django, FastAPI
+- **Frontend:** React.js, Next.js, TailwindCSS
+- **Database:** MongoDB, PostgreSQL, MySQL, Redis
+- **DevOps & Tools:** Docker, Nginx, GitHub Actions, Google Cloud, AWS
+- **AI / Deep Learning:** Python, TensorFlow, PyTorch, NLP (BERT, GPT-2)
+- **Others:** REST APIs, Microservices, WebSockets, JWT Auth, BULLMQ, Prisma
 
-![OAuth](https://img.shields.io/badge/-OAuth-05122A?style=flat&logo=oauth) ![JWT](https://img.shields.io/badge/-JWT-05122A?style=flat&logo=json-web-tokens)
-![Google OAuth](https://img.shields.io/badge/-Google%20OAuth-05122A?style=flat&logo=google)
+---
 
-#### **AI/Deep Learning**
+### 🏆 Achievements
 
-![Python](https://img.shields.io/badge/-Python-05122A?style=flat&logo=python) ![TensorFlow](https://img.shields.io/badge/-TensorFlow-05122A?style=flat&logo=tensorflow) ![Keras](https://img.shields.io/badge/-Keras-05122A?style=flat&logo=keras) ![PyTorch](https://img.shields.io/badge/-PyTorch-05122A?style=flat&logo=pytorch)  
-![HuggingFace](https://img.shields.io/badge/-HuggingFace-05122A?style=flat&logo=huggingface) ![Google Cloud](https://img.shields.io/badge/-Google%20Cloud-05122A?style=flat&logo=google-cloud)
+- 🥇 **Top 0.5%** in _TCS CodeVita Season 12_ — Ranked **#1961 globally** out of **440,000+ participants**
+- 💻 **Hands-on Internship Experience** in Web Development (3 months - onsite) & Google Cloud GenAI (2 months - virtual)
+- 🧩 **Architected Production-Ready Projects** like _Streamlet_ and _NexusCore_
+- 🔥 Recognized for building optimized, scalable, and maintainable backend systems
 
 ---
 
 ### 💻 Featured Projects
 
-| Project                    | Tech Stack          | Description                                                            |
-| -------------------------- | ------------------- | ---------------------------------------------------------------------- |
-| **Library Management ERP** | MERN + MySQL        | Full-stack solution for managing book inventory and student operations |
-| **M3U8 Video Streaming**   | MERN Stack          | Adaptive bitrate streaming platform with dashboard analytics           |
-| **Real-Time Chat App**     | WebRTC, Socket.io   | P2P video calling and messaging platform                               |
-| **AI Chat Assistant**      | Python, BERT, GPT-2 | Context-aware Q&A system with dialogue understanding                   |
+| 🧩 Project                                                                    | ⚙️ Tech Stack                                 | 📝 Description                                                                                                                                                                        |
+| ----------------------------------------------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🎬 **[Streamlet](https://github.com/rahulkbharti/streamlet-microservices.git)**             | Microservices, Node.js, BULLMQ, FFmpeg, React | A microservice based , scalable video streaming platform with asynchronous transcoding, adaptive bitrate streaming (HLS), and real-time updates.                                                           |
+| 🧠 **[NexusCore](https://github.com/rahulkbharti/nexus-core-backend.git)**                | Node.js, Prisma, PostgreSQL, Redis, RBAC      | A next-gen Library ERP backend that enables digital transformation for libraries with robust book, member, and loan management, role-based access, caching, and analytics-ready APIs with multi tanent support.  |
+| 💬 **[MeshTalk](https://github.com/rahulkbharti/meshtalk.git)**                   | MERN, WebRTC, Socket.io                       | Real-time peer-to-peer video calling & messaging app with low-latency secure communication.                                                                                           |
+| 🤖 **[Question Answering with BART with Memory](https://github.com/rahulkbharti/memory-augmented-bart-qa.git)** | Python, BART with MEMORY                           | Context-aware conversational AI fine-tuned for dialogue-based Q&A.                                                                                                                    |
 
 ---
 
 ### 📊 GitHub Stats
 
-<p align="left">
+<!-- <p align="center"> -->
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=rahulkbharti&show_icons=true&theme=radical&include_all_commits=true" />
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulkbharti&layout=compact&theme=radical" />
-</p>
+<!-- </p> -->
 
 ---
 
-### 📫 Let's Connect
+### 🌐 Connect With Me
 
-<p align="left">
+<!-- <p align="center"> -->
   <a href="https://linkedin.com/in/rahul-kbharti">
-    <img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Rahul%20Kumar%20Bharti-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
   <a href="mailto:rahul.kbharti2002@gmail.com">
     <img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
@@ -73,7 +67,18 @@ I'm a **2025 B.Tech (IT) graduate** specializing in **MERN stack development** a
   <a href="https://github.com/rahulkbharti">
     <img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
   </a>
-</p>
+<!-- </p> -->
+
+---
+
+### 💬 Fun Fact
+
+> “First, solve the problem. Then, write the code.” — _John Johnson_
+
+<!-- <p align="center"> -->
+  <img src="https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif" width="300" alt="Coding GIF" />
+<!-- </p> -->
+
 
 ---
 
@@ -81,4 +86,5 @@ I'm a **2025 B.Tech (IT) graduate** specializing in **MERN stack development** a
   <img src="https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif" width="300" alt="Coding GIF" />
 </p>
 <h4 align="left">"First, solve the problem. Then, write the code." - John Johnson</h4>
+
 
