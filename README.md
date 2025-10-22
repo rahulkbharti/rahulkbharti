@@ -17,12 +17,12 @@ Currently, I’m looking for a **full-time backend or full-stack role** where I 
 
 ### ⚡ Tech Stack & Core Skills
 
-- **Backend:** Node.js, Express.js, Django, FastAPI
-- **Frontend:** React.js, Next.js, TailwindCSS
-- **Database:** MongoDB, PostgreSQL, MySQL, Redis
-- **DevOps & Tools:** Docker, Nginx, GitHub Actions, Google Cloud, AWS
-- **AI / Deep Learning:** Python, TensorFlow, PyTorch, NLP (BERT, GPT-2)
-- **Others:** REST APIs, Microservices, WebSockets, JWT Auth, BULLMQ, Prisma
+- **Backend:** Node.js*, Express.js, FastAPI, Django
+- **Frontend:** React.js*, Next.js, TailwindCSS, Material UI
+- **Database:** PostgreSQL, MongoDB, MySQL, Redis
+- **DevOps & Tools:** Docker, GitHub Actions, Microsoft Azure, Google Cloud
+- **AI / Deep Learning:** Python, TensorFlow, PyTorch, NLP (BERT, GPT-2), Gemini API
+- **Others:** REST APIs, Microservices, WebSockets, JWT Auth, Google OAuth, BULLMQ, Prisma ORM
 
 ---
 
@@ -42,7 +42,7 @@ Currently, I’m looking for a **full-time backend or full-stack role** where I 
 | 🎬 **[Streamlet](https://github.com/rahulkbharti/streamlet-microservices.git)**             | Microservices, Node.js, BULLMQ, FFmpeg, React | A microservice based , scalable video streaming platform with asynchronous transcoding, adaptive bitrate streaming (HLS), and real-time updates.                                                           |
 | 🧠 **[NexusCore](https://github.com/rahulkbharti/nexus-core-backend.git)**                | Node.js, Prisma, PostgreSQL, Redis, RBAC      | A next-gen Library ERP backend that enables digital transformation for libraries with robust book, member, and loan management, role-based access, caching, and analytics-ready APIs with multi tanent support.  |
 | 💬 **[MeshTalk](https://github.com/rahulkbharti/meshtalk.git)**                   | MERN, WebRTC, Socket.io                       | Real-time peer-to-peer video calling & messaging app with low-latency secure communication.                                                                                           |
-| 🤖 **[Question Answering with BART with Memory](https://github.com/rahulkbharti/memory-augmented-bart-qa.git)** | Python, Modified BART                        | Context-aware conversational AI fine-tuned for dialogue-based Q&A.                                                                                                                    |
+| 🤖 **[Question Answering with BART with Memory](https://github.com/rahulkbharti/memory-augmented-bart-qa.git)** | Python,PyTorch and  Modified BART                        | Context-aware conversational AI fine-tuned for dialogue-based Q&A.                                                                                                                    |
 
 ---
 
@@ -80,11 +80,7 @@ Currently, I’m looking for a **full-time backend or full-stack role** where I 
 <!-- </p> -->
 
 
----
 
-<p align="left">
-  <img src="https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif" width="300" alt="Coding GIF" />
-</p>
-<h4 align="left">"First, solve the problem. Then, write the code." - John Johnson</h4>
+
 
 
