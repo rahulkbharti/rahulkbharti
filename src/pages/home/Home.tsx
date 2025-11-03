@@ -78,7 +78,7 @@ const Home: React.FC = () => {
                             {/* Main Image Placeholder */}
                             <Box
                                 component="img"
-                                src="./s.png"
+                                src="./rahulkbharti/s.png"
                                 alt="A person in a hoodie"
                                 sx={{
                                     width: '100%',
