@@ -1,6 +1,16 @@
 <h1 align="center">Hey there 👋, I'm Rahul Kumar Bharti</h1>
 <h3 align="center">Full Stack Developer | Node.js Backend Specialist | React.js Developer | Python Backend & Deep Learning Engineer</h3>
-<p align="center"> <img src="https://komarev.com/ghpvc/?username=rahulkbharti&label=Profile%20views&color=0e75b6&style=flat" alt="Rahul Kumar Bharti" /> </p>
+<p align="center">
+  <a href="https://rahulkbharti.github.io/rahulkbharti" target="_blank">
+    <img src="https://img.shields.io/badge/-Portfolio-1a202c?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
+  </a>
+  &nbsp;
+  <a href="https://linkedin.com/in/rahul-kbharti" target="_blank">
+    <img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <br />
+  <img src="https://komarev.com/ghpvc/?username=rahulkbharti&label=Profile%20views&color=0e75b6&style=flat" alt="Profile views" />
+</p>
 
 ---
 
