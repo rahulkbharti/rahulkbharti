@@ -1,23 +1,32 @@
-import { Link, Stack } from "@mui/material";
+import { Box, Link, Stack } from "@mui/material";
 import LanguageSelector from "./LanguageSelector";
+
+
+const Links = [
+    { href: '#home', label: 'Home' },
+    { href: '#works', label: 'Works' },
+    { href: '#about-me', label: 'About-Me' },
+    { href: '#contacts', label: 'Contacts' },
+];
 
 const DesktopNav: React.FC = () => (
     <Stack direction="row" spacing={3} alignItems="center">
-        {['#home', '#works', '#about-me', '#contacts'].map((text) => (
+        {Links.map(({ href, label }) => (
             <Link
-                href={text}
-                key={text}
+                href={href}
+                key={href}
                 sx={{
                     color: 'primary.main',
-                    fontSize: '1rem',
-                    fontWeight: 'bold',
                     textDecoration: 'none',
+                }}
+            >
+                #<Box component="span" sx={{
+                    color: 'primary.main', fontSize: '1rem',
+                    fontWeight: 'bold',
                     '&:hover': {
                         color: 'white',
                     },
-                }}
-            >
-                {text}
+                }}>{label}</Box>
             </Link>
         ))}
         <LanguageSelector />

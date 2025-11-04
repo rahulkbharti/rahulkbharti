@@ -24,6 +24,16 @@ import DesktopSocialSidebar from './DesktopSocialSidebar';
 import Logo from './Logo';
 import LanguageSelector from './LanguageSelector';
 import DesktopNav from './DesktopNav';
+import Footer from './Footer';
+
+
+const Links = [
+    { href: '#home', label: 'Home' },
+    { href: '#works', label: 'Works' },
+    { href: '#about-me', label: 'About-Me' },
+    { href: '#contacts', label: 'Contacts' },
+];
+
 
 
 const darkTheme = createTheme({
@@ -95,7 +105,7 @@ const Layout: React.FC = () => {
                 minHeight: '100vh',
                 display: 'flex',
                 flexDirection: 'column',
-                width: { xs: '100vw', md: 'calc(100vw - 70px)' },
+                width: { xs: '100%', md: 'calc(100% - 70px)' },
                 justifyContent: "flex-start",
                 marginLeft: { xs: 0, md: '70px' } // Offset for sidebar
             }}>
@@ -131,6 +141,9 @@ const Layout: React.FC = () => {
                 {/* --- Main Content Outlet --- */}
 
                 <Outlet />
+
+                {/* --- Footer --- */}
+                <Footer />
             </Box>
 
             {/* --- Mobile Menu Drawer (Full Screen) --- */}
@@ -158,22 +171,23 @@ const Layout: React.FC = () => {
                     </IconButton>
                 </Box>
                 <Stack spacing={3} sx={{ mt: 8, pl: 2 }}>
-                    {['#home', '#works', '#about-me', '#contacts'].map((text) => (
+                    {Links.map(({ href, label }) => (
                         <Link
-                            href={text}
-                            key={text}
-                            onClick={toggleMenu}
+                            href={href}
+                            key={href}
                             sx={{
                                 color: 'primary.main',
-                                fontSize: '2.2rem',
-                                fontWeight: 'bold',
                                 textDecoration: 'none',
+                                fontSize: '2.2rem',
+                            }}
+                        >
+                            #<Box component="span" sx={{
+                                color: 'primary.main',
+                                fontWeight: 'bold',
                                 '&:hover': {
                                     color: 'white',
                                 },
-                            }}
-                        >
-                            {text}
+                            }}>{label}</Box>
                         </Link>
                     ))}
                 </Stack>

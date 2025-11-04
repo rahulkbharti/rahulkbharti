@@ -1,8 +1,19 @@
 import React from 'react';
-import { Box, Container, Grid, Typography, Button } from '@mui/material';
+import { Box, Container, Grid, Typography, Button, Link } from '@mui/material';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import { TypingEffect } from '../../components/TypingEffect';
+import Projects from '../projects/Projects';
+import Skills from '../skills/Skills';
+import Contact from '../contact/Contact';
+import BlogList from '../blog/BlogList';
 
-const FULL_NAME = "Rahul Kumar";
+const FULL_NAME = "Rahul Bharti";
+const MY_ROLES = [
+    "Software Developer",
+    "MERN Stack",
+    "SaaS Architect",
+    "Microservices"
+];
 
 const Home: React.FC = () => {
     return (
@@ -13,16 +24,39 @@ const Home: React.FC = () => {
                     {/* Left Column: Hero Text */}
                     <Grid size={{ xs: 12, md: 6 }}>
                         <Box sx={{ px: { xs: 1, md: 2 } }}>
-                            <Typography variant="h1" sx={{ fontSize: { xs: '2.2rem', md: '2.5rem' } }}>
-                                {FULL_NAME} is a <Box component="span" sx={{ color: 'primary.main' }}>MERN Stack Developer </Box> and an <Box component="span" sx={{ color: 'primary.main' }}> AI Engineer. </Box>
+                            <Typography
+                                variant="h1"
+                                sx={{
+                                    fontSize: { xs: '2.5rem', md: '3rem' }, // Naam ko bada karein
+                                    fontWeight: 700,
+                                    lineHeight: 1.2
+                                }}
+                            >
+                                Hey, I'm
+                                <Box component="span" sx={{ color: 'primary.main' }}> {FULL_NAME}</Box>.
                             </Typography>
+
+                            <Typography
+                                variant="h3" // Ise h2 banayein
+                                sx={{
+                                    fontSize: { xs: '1.8rem', md: '2.2rem' },
+                                    color: 'text.secondary', // Role ko thoda subtle karein
+                                    mt: 1
+                                }}
+                            >
+                                Full Stack Developer & AI Engineer.
+                            </Typography>
+
                             <Typography variant="body1" sx={{ mt: 3 }}>
-                                He builds scalable backends and intelligent systems using modern technologies.
+                                I build and scale end-to-end, intelligent SaaS platforms. Expert in architecting microservice-based MERN applications and deploying advanced NLP models from research to production.
                             </Typography>
+                            <Typography variant='body1'>[<TypingEffect roles={MY_ROLES} />]</Typography>
                             {/* New "Contact me" button for desktop */}
                             <Button
                                 variant="outlined"
                                 color="primary"
+                                component={Link}
+                                href="#contact"
                                 sx={{
                                     mt: 4,
                                     display: { xs: 'none', md: 'inline-flex' } // Hide on mobile
@@ -158,6 +192,10 @@ const Home: React.FC = () => {
                 border: '1px solid #444',
                 zIndex: -1,
             }} />
+            <Skills />
+            <Projects />
+            <BlogList />
+            <Contact />
         </>
     );
 };
