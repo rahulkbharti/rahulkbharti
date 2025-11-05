@@ -24,7 +24,6 @@ const PROJECTS: Project[] = [
         description: "A microservices-based video streaming platform built with modern technologies for scalability and performance.",
         technologies: ["Node.js", "PostgreSQL", "Express", "MongoDB", "Docker", "Next.js"],
         images: [
-            "/rahulkbharti/projects/streamlet3-home.png",
             "/rahulkbharti/projects/streamlet1-home.png",
             "/rahulkbharti/projects/streamlet2-player.png",
         ],
@@ -37,7 +36,6 @@ const PROJECTS: Project[] = [
         description: "A comprehensive ERP solution designed for library management, featuring user authentication, role-based access, and real-time analytics.",
         technologies: ["Node.js", "React.js", "Docker", "Redis", "jwt", "Configurable RBAC", "PostgreSQL", "Prisma ORM"],
         images: [
-            "/rahulkbharti/projects/nexuscore3.png",
             "/rahulkbharti/projects/nexuscore1-dark.png",
             "/rahulkbharti/projects/nexuscore2-light.png",
         ],
@@ -50,10 +48,12 @@ const PROJECTS: Project[] = [
         description: "A peer-to-peer video chat application built with WebRTC and modern web technologies.",
         technologies: ["TypeScript", "React", "WebRTC", "Node.js", "Socket.io"],
         images: [
-            "/rahulkbharti/projects/meshtalk.png",
+            "/rahulkbharti/projects/mesh-talk.png",
+            "/rahulkbharti/projects/mesh-talk3.png",
+            "/rahulkbharti/projects/mesh-talk4.png",
         ],
         githubUrl: "https://github.com/rahulkbharti/mesh-talk.git",
-        liveUrl: "https://real-time-video-chat.onrender.com"
+        liveUrl: "https://rahulkbharti.github.io/mesh-talk/"
     },
 ];
 
@@ -117,7 +117,7 @@ const Projects: React.FC = () => {
                                     sx={{
                                         position: 'relative',
                                         '& .swiper': {
-                                            height: 200,
+                                            height: 250,
                                         },
                                         '& .swiper-pagination-bullet': {
                                             bgcolor: 'rgba(200, 109, 215, 0.4)',
@@ -132,7 +132,7 @@ const Projects: React.FC = () => {
                                         pagination={{ clickable: true }}
                                         autoplay={{ delay: 3000, disableOnInteraction: false }}
                                         loop={project.images.length > 1}
-                                        style={{ height: 200 }}
+                                    // style={{ height: 200 }}
                                     >
                                         {project.images.map((img, idx) => (
                                             <SwiperSlide key={idx}>
@@ -142,8 +142,8 @@ const Projects: React.FC = () => {
                                                     alt={`${project.title} screenshot ${idx + 1}`}
                                                     sx={{
                                                         width: '100%',
-                                                        height: 200,
-                                                        objectFit: 'cover',
+                                                        // height: 200,
+                                                        // objectFit: 'cover',
                                                         bgcolor: '#2a2d32',
                                                     }}
                                                 />

@@ -7,7 +7,7 @@ import Skills from '../skills/Skills';
 import Contact from '../contact/Contact';
 import BlogList from '../blog/BlogList';
 
-const FULL_NAME = "Rahul Bharti";
+const FULL_NAME = "Rahul Kumar Bharti";
 const MY_ROLES = [
     "Software Developer",
     "MERN Stack",

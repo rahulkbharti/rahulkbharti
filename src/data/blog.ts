@@ -30,7 +30,7 @@ export const POSTS: Post[] = [
       "- Use case studies: problem → approach → result.\n" +
       "- Add tests, docs, and CI where possible—signals professionalism.",
     likes: 12,
-    coverImage: "/rahulkbharti/projects/streamlet3-home.png",
+    coverImage: "/rahulkbharti/projects/mesh-talk.png",
   },
   {
     id: "2",
@@ -47,6 +47,6 @@ export const POSTS: Post[] = [
       "- Split bundles with dynamic imports.\n" +
       "- Use the React Profiler to find hot paths.",
     likes: 30,
-    coverImage: "/rahulkbharti/projects/streamlet3-home.png",
+    coverImage: "/rahulkbharti/projects/mesh-talk.png",
   },
 ];
