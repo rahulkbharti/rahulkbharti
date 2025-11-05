@@ -7,6 +7,7 @@ import BlogList from "./pages/blog/BlogList";
 import BlogPost from "./pages/blog/BlogPost";
 import Contact from "./pages/contact/Contact";
 import Layout from "./layout";
+import BlogBackprop from "./data/Backpropagation";
 
 const App: React.FC = () => {
     return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
                     <Route path="blog" element={<BlogList />} />
                     <Route path="blog/:slug" element={<BlogPost />} />
                     <Route path="contact" element={<Contact />} />
+                    <Route path="*" element={<BlogBackprop />} />
                 </Route>
             </Routes>
         </BrowserRouter>

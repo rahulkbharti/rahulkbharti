@@ -17,6 +17,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { POSTS, type Post } from '../../data/blog';
+import BlogBackprop from '../../data/Backpropagation';
 
 interface CommentItem {
     id: string;
@@ -130,9 +131,7 @@ const BlogPost: React.FC = () => {
             )}
 
             {/* Content */}
-            <Typography variant="body1" sx={{ color: 'text.secondary', whiteSpace: 'pre-line' }}>
-                {post.content}
-            </Typography>
+            <BlogBackprop />
 
             {/* Likes */}
             <Stack direction="row" spacing={1} alignItems="center" sx={{ mt: 3 }}>

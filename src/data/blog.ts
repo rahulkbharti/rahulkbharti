@@ -13,12 +13,13 @@ export interface Post {
 export const POSTS: Post[] = [
   {
     id: "1",
-    slug: "building-a-portfolio",
-    title: "Building a Developer Portfolio: What Matters",
+    slug: "neural-network-backpropagation",
+    title:
+      "Understanding Neural Network Backpropagation: A Mathematical Perspective",
     date: "2025-10-15",
-    tags: ["Portfolio", "Career", "Design"],
+    tags: ["Neural Networks", "Backpropagation", "Machine Learning"],
     excerpt:
-      "What makes a portfolio stand out? Practical projects, clean presentation, and a clear story about your impact.",
+      "A deep dive into the mathematical foundations of backpropagation in neural networks.",
     content:
       "" +
       "A great portfolio does three things:\n\n" +
@@ -30,23 +31,6 @@ export const POSTS: Post[] = [
       "- Use case studies: problem → approach → result.\n" +
       "- Add tests, docs, and CI where possible—signals professionalism.",
     likes: 12,
-    coverImage: "/rahulkbharti/projects/mesh-talk.png",
-  },
-  {
-    id: "2",
-    slug: "react-performance-tips",
-    title: "React Performance Tips You Can Use Today",
-    date: "2025-11-01",
-    tags: ["React", "Performance", "Frontend"],
-    excerpt:
-      "From memoization to virtualization—small tweaks that have big impact on app responsiveness.",
-    content:
-      "Focus on real bottlenecks first. A few tactics that often pay off:\n\n" +
-      "- Avoid unnecessary re-renders with memo, useMemo, and useCallback (but measure!).\n" +
-      "- Virtualize long lists with react-window or react-virtual.\n" +
-      "- Split bundles with dynamic imports.\n" +
-      "- Use the React Profiler to find hot paths.",
-    likes: 30,
-    coverImage: "/rahulkbharti/projects/mesh-talk.png",
+    coverImage: "/rahulkbharti/blogs/Neural Network Original.png",
   },
 ];
