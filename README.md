@@ -29,7 +29,7 @@ Currently, I’m looking for a **full-time backend or full-stack role** where I 
 - **Backend:** Node.js\*, Express.js, FastAPI, Django
 - **Frontend:** React.js\*, Next.js, TailwindCSS, Material UI
 - **Database:** PostgreSQL, MongoDB, MySQL, Redis
-- **DevOps & Tools:** Docker, GitHub Actions, Microsoft Azure, Google Cloud
+- **DevOps & Tools:** Docker, GitHub Actions,AWS, Microsoft Azure
 - **AI / Deep Learning:** Python, TensorFlow, PyTorch, NLP (BERT, GPT-2), Gemini API
 - **Others:** REST APIs, Microservices, WebSockets, JWT Auth, Google OAuth, BULLMQ, Prisma ORM
 
@@ -37,7 +37,7 @@ Currently, I’m looking for a **full-time backend or full-stack role** where I 
 
 ### 🏆 Achievements
 
-- 🥇 **Top 0.5%** in _TCS CodeVita Season 12_ — Ranked **#1961 globally** out of **440,000+ participants**
+- 🥇 **Top 0.5%** in _TCS CodeVita Season 12_ — Ranked **#1961 globally** out of **537,000 participants**
 - 💻 **Hands-on Internship Experience** in Web Development (3 months - onsite) & Google Cloud GenAI (2 months - virtual)
 - 🧩 **Architected Production-Ready Projects** like _Streamlet_ and _NexusCore_
 - 🔥 Recognized for building optimized, scalable, and maintainable backend systems
