@@ -1,89 +1,179 @@
-<h1 align="center">Hey there 👋, I'm Rahul </h1>
-<h3 align="center">Full Stack Developer | Node.js Backend Specialist | React.js Developer | Python Backend & Deep Learning Engineer</h3>
-<p align="center">
-  <a href="https://rahulkbharti.github.io/rahulkbharti" target="_blank">
-    <img src="https://img.shields.io/badge/-Portfolio-1a202c?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
-  </a>
-  &nbsp;
-  <a href="https://linkedin.com/in/rahul-kbharti" target="_blank">
-    <img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <br />
-  <img src="https://komarev.com/ghpvc/?username=rahulkbharti&label=Profile%20views&color=0e75b6&style=flat" alt="Profile views" />
-</p>
+<!-- HEADER -->
+<div align="center">
+
+```
+____       _           _   ____  _                 _   _ 
+ |  _ \ __ _| |__  _   _| | | __ )| |__   __ _ _ __| |_(_)
+ | |_) / _` | '_ \| | | | | |  _ \| '_ \ / _` | '__| __| |
+ |  _ < (_| | | | | |_| | | | |_) | | | | (_| | |  | |_| |
+ |_| \_\__,_|_| |_|\__,_|_| |____/|_| |_|\__,_|_|   \__|_|
+```
+
+# `> whoami`
+
+**Full Stack Developer** · **Backend Architect** · **Agentic AI Builder**
+
+*Currently employed. Quietly looking for something better.*
+
+[![Portfolio](https://img.shields.io/badge/portfolio-000000?style=flat-square&logo=vercel&logoColor=white)](https://rahulkbharti.github.io/rahulkbharti)
+[![LinkedIn](https://img.shields.io/badge/linkedin-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/rahul-kbharti)
+[![Gmail](https://img.shields.io/badge/gmail-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:rahul.kbharti2002@gmail.com)
+[![GitHub](https://img.shields.io/badge/github-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/rahulkbharti)
+![Visitors](https://komarev.com/ghpvc/?username=rahulkbharti&label=profile+views&color=0e75b6&style=flat-square)
+
+</div>
 
 ---
 
-### 🧠 About Me
+## `$ cat about.txt`
 
-I'm a **Backend-Focused Full Stack Developer** passionate about crafting scalable, high-performance systems.  
-My core strength lies in building **RESTful APIs**, architecting **backend infrastructures**, and connecting them seamlessly with **modern frontends**.
+Hey — I'm **Rahul Bharti**, a backend-heavy full stack dev who actually enjoys reading system design docs for fun.
 
-💡 I thrive in problem-solving, clean code, and learning cutting-edge tech.  
-Currently, I’m looking for a **full-time backend or full-stack role** where I can leverage my expertise in **Node.js, Express, and cloud-based microservices**.
+I don't just build features — I build *systems*. Multi-tenant SaaS, video pipelines, async job queues, autonomous AI agents — that's my zone.
 
----
+Right now I'm deep in **Agentic AI** with LangChain & LangGraph — building agents that *do things*, not just chat. The kind of stuff that makes you feel like you're writing science fiction.
 
-### ⚡ Tech Stack & Core Skills
-
-- **Backend:** Node.js\*, Express.js, FastAPI, Django
-- **Frontend:** React.js\*, Next.js, TailwindCSS, Material UI
-- **Database:** PostgreSQL, MongoDB, MySQL, Redis
-- **DevOps & Tools:** Docker, GitHub Actions,AWS, Microsoft Azure
-- **AI / Deep Learning:** Python, TensorFlow, PyTorch, NLP (BERT, GPT-2), Gemini API
-- **Others:** REST APIs, Microservices, WebSockets, JWT Auth, Google OAuth, BULLMQ, Prisma ORM
+- **Founder @ [libspace.in](https://www.libspace.in)** — A production-grade, multi-tenant Library ERP serving real libraries.
+- **Building autonomous AI agents** using LangChain, LangGraph & Gemini API.
+- **Full Stack Dev @ Nexteir Technologies** — contributing, but open to a bigger stage.
+- B.Tech IT Graduate (2025) · **Global Rank #1961** in TCS CodeVita S12 (Top 0.5% / 537k+ devs)
 
 ---
 
-### 🏆 Achievements
+## `$ ls skills/`
 
-- 🥇 **Top 0.5%** in _TCS CodeVita Season 12_ — Ranked **#1961 globally** out of **537,000 participants**
-- 💻 **Hands-on Internship Experience** in Web Development (3 months - onsite) & Google Cloud GenAI (2 months - virtual)
-- 🧩 **Architected Production-Ready Projects** like _Streamlet_ and _NexusCore_
-- 🔥 Recognized for building optimized, scalable, and maintainable backend systems
+<table>
+  <tr>
+    <td valign="top" width="50%">
+
+**Backend**
+```yaml
+runtime : Node.js · Express.js · TypeScript
+python  : FastAPI · Django
+patterns: REST · Microservices · WebSockets
+queues  : BullMQ · Redis
+```
+
+**Frontend**
+```yaml
+framework: React.js · Next.js
+styling  : TailwindCSS
+```
+
+**Databases**
+```yaml
+relational: PostgreSQL (+ Prisma ORM)
+nosql     : MongoDB
+cache     : Redis
+```
+
+  </td>
+  <td valign="top" width="50%">
+
+**DevOps & Cloud**
+```yaml
+containers: Docker
+ci/cd     : GitHub Actions
+os        : Linux
+cloud     : AWS · Azure · Google Cloud
+```
+
+**AI / ML** `← active focus`
+```yaml
+classical : Pytorch · Deep Learning
+agents    : LangChain · LangGraph
+llm apis  : Gemini API
+current   : Agentic AI · Deep Agent Arch.
+```
+
+**Specialized**
+```yaml
+video : FFmpeg · HLS · Adaptive Bitrate
+rt    : WebRTC · Socket.io
+infra : SRS · Bunny.net CDN
+```
+
+  </td>
+  </tr>
+</table>
 
 ---
 
-### 💻 Featured Projects
+## `$ cat projects.md`
 
-| 🧩 Project                                                                                                      | ⚙️ Tech Stack                                 | 📝 Description                                                                                                                                                                                                  |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🎬 **[Streamlet](https://github.com/rahulkbharti/streamlet-microservices.git)**                                 | Microservices, Node.js, BULLMQ, FFmpeg, React | A microservice based , scalable video streaming platform with asynchronous transcoding, adaptive bitrate streaming (HLS), and real-time updates.                                                                |
-| 🧠 **[NexusCore](https://github.com/rahulkbharti/nexus-core-backend.git)**                                      | Node.js, Prisma, PostgreSQL, Redis, RBAC      | A next-gen Library ERP backend that enables digital transformation for libraries with robust book, member, and loan management, role-based access, caching, and analytics-ready APIs with multi tanent support. |
-| 💬 **[MeshTalk](https://github.com/rahulkbharti/meshtalk.git)**                                                 | MERN, WebRTC, Socket.io                       | Real-time peer-to-peer video calling & messaging app with low-latency secure communication.                                                                                                                     |
-| 🤖 **[Question Answering with BART with Memory](https://github.com/rahulkbharti/memory-augmented-bart-qa.git)** | Python,PyTorch and Modified BART              | Context-aware conversational AI fine-tuned for dialogue-based Q&A.                                                                                                                                              |
+### 📚 [LibSpace](https://libspace.in) — Library ERP SaaS
+> *Not a college project. A real product.*
 
----
+Multi-tenant library management platform with QR-based attendance, automated billing, seat booking, and student productivity tools. Running in production, serving real institutions.
 
-### 📊 GitHub Stats
-
-<!-- <p align="center"> -->
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=rahulkbharti&show_icons=true&theme=radical&include_all_commits=true" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahulkbharti&layout=compact&theme=radical" />
-<!-- </p> -->
+`Node.js` `PostgreSQL` `Prisma` `Docker` `Multi-tenancy`
 
 ---
 
-### 🌐 Connect With Me
+### 🎬 [Streamlet](https://github.com/rahulkbharti/streamlet-microservices.git) — Video Streaming Platform
+> *Because "just use YouTube" isn't an answer.*
 
-<!-- <p align="center"> -->
-  <a href="https://linkedin.com/in/rahul-kbharti">
-    <img src="https://img.shields.io/badge/-Rahul%20Kumar%20Bharti-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="mailto:rahul.kbharti2002@gmail.com">
-    <img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-  <a href="https://github.com/rahulkbharti">
-    <img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
-<!-- </p> -->
+Microservices-based video streaming with async transcoding via BullMQ, FFmpeg for HLS output, and adaptive bitrate delivery. Designed to scale.
+
+`Microservices` `BullMQ` `FFmpeg` `HLS` `Docker`
 
 ---
 
-### 💬 Fun Fact
+### 💬 [MeshTalk](https://github.com/rahulkbharti/meshtalk.git) — P2P Video Calling
+> *WebRTC in the wild.*
 
-> “First, solve the problem. Then, write the code.” — _John Johnson_
+Real-time peer-to-peer video calling and messaging. No middleman. Built on WebRTC + Socket.io.
 
-<!-- <p align="center"> -->
-  <img src="https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif" width="300" alt="Coding GIF" />
-<!-- </p> -->
+`WebRTC` `Socket.io` `MERN Stack`
+
+---
+
+## `$ git log --oneline` — Currently Learning
+
+```bash
+commit a3f91c2  feat: diving deeper into LangGraph multi-agent systems
+commit 7b204e1  feat: building autonomous marketing agent w/ Gemini API
+commit 2d9a0e0  docs: studying deep agent architectures & tool-calling patterns
+commit 1c88f0d  chore: exploring MCP (Model Context Protocol) integrations
+```
+
+
+
+---
+
+## `$ cat stats.md`
+
+<div align="center">
+
+![Rahul's GitHub Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=rahulkbharti&show_icons=true&theme=tokyonight&include_all_commits=true&hide_border=true)
+&nbsp;
+![Top Languages](https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=rahulkbharti&layout=compact&theme=tokyonight&hide_border=true)
+
+![GitHub Streak](https://streak-stats.demolab.com?user=rahulkbharti&theme=tokyonight&hide_border=true)
+
+![Trophy](https://github-profile-trophy.vercel.app/?username=rahulkbharti&theme=tokyonight&no-frame=true&row=1&column=7)
+
+![Contribution Graph](https://github-readme-activity-graph.vercel.app/graph?username=rahulkbharti&theme=tokyo-night&hide_border=true&area=true&custom_title=Rahul+Bharti+%7C+Always+Shipping)
+
+<!-- WakaTime — uncomment after setting up wakatime.com + VS Code extension -->
+<!-- ![WakaTime](https://github-readme-stats-sigma-five.vercel.app/api/wakatime?username=rahulkbharti&theme=tokyonight&hide_border=true&layout=compact) -->
+
+![Dev Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
+
+</div>
+
+---
+
+## `$ ping me`
+
+I respond to interesting problems faster than `O(1)`.
+
+If you're building something ambitious in **SaaS**, **AI agents**, **real-time systems**, or **video infra** — let's talk.
+
+> *"First, solve the problem. Then, write the code."* — John Johnson
+
+<div align="center">
+
+**[Email](mailto:rahul.kbharti2002@gmail.com) · [LinkedIn](https://linkedin.com/in/rahul-kbharti) · [Portfolio](https://rahulkbharti.github.io/rahulkbharti)**
+
+</div>
