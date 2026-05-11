@@ -1,4 +1,4 @@
-<h1 align="center">Hey there 👋, I'm Rahul Kumar Bharti</h1>
+<h1 align="center">Hey there 👋, I'm Rahul </h1>
 <h3 align="center">Full Stack Developer | Node.js Backend Specialist | React.js Developer | Python Backend & Deep Learning Engineer</h3>
 <p align="center">
   <a href="https://rahulkbharti.github.io/rahulkbharti" target="_blank">
