@@ -33,7 +33,7 @@ I don't just build features — I build *systems*. Multi-tenant SaaS, video pipe
 
 Right now I'm deep in **Agentic AI** with LangChain & LangGraph — building agents that *do things*, not just chat. The kind of stuff that makes you feel like you're writing science fiction.
 
-- **Founder @ [libspace.in](https://www.libspace.in)** — A production-grade, multi-tenant Library ERP serving real libraries.
+- **Creator & Lead Architect @ [libspace.in](https://www.libspace.in)** — A production-grade, multi-tenant Library ERP serving real libraries.
 - **Building autonomous AI agents** using LangChain, LangGraph & Gemini API.
 - **Full Stack Dev @ Nexteir Technologies** — contributing, but open to a bigger stage.
 - B.Tech IT Graduate (2025) · **Global Rank #1961** in TCS CodeVita S12 (Top 0.5% / 537k+ devs)
