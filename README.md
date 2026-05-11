@@ -35,7 +35,6 @@ Right now I'm deep in **Agentic AI** with LangChain & LangGraph — building age
 
 - **Creator & Lead Architect @ [libspace.in](https://www.libspace.in)** — A production-grade, multi-tenant Library ERP serving real libraries.
 - **Building autonomous AI agents** using LangChain, LangGraph & Gemini API.
-- **Full Stack Dev @ Nexteir Technologies** — contributing, but open to a bigger stage.
 - B.Tech IT Graduate (2025) · **Global Rank #1961** in TCS CodeVita S12 (Top 0.5% / 537k+ devs)
 
 ---
