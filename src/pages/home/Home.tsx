@@ -4,6 +4,7 @@ import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import { TypingEffect } from '../../components/TypingEffect';
 import Projects from '../projects/Projects';
 import Skills from '../skills/Skills';
+import Highlights from './Highlights';
 import Contact from '../contact/Contact';
 import BlogList from '../blog/BlogList';
 
@@ -235,6 +236,7 @@ const Home: React.FC = () => {
             }} />
             <Skills />
             <Projects />
+            <Highlights />
             <BlogList />
             <Contact />
         </>

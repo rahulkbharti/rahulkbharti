@@ -9,6 +9,14 @@ import BlogList from "./pages/blog/BlogList";
 import BlogPost from "./pages/blog/BlogPost";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
+import AchievementsPage from "./pages/sections/AchievementsPage";
+import TimelinePage from "./pages/sections/TimelinePage";
+import MetricsPage from "./pages/sections/MetricsPage";
+import TestimonialsPage from "./pages/sections/TestimonialsPage";
+import OpenSourcePage from "./pages/sections/OpenSourcePage";
+import TalksWritingPage from "./pages/sections/TalksWritingPage";
+import ServicesPage from "./pages/sections/ServicesPage";
+import AvailabilityPage from "./pages/sections/AvailabilityPage";
 import Layout from "./layout";
 import BlogBackprop from "./data/Backpropagation";
 
@@ -25,6 +33,14 @@ const App: React.FC = () => {
                     <Route path="blog/:slug" element={<BlogPost />} />
                     <Route path="contact" element={<Contact />} />
                     <Route path="about" element={<About />} />
+                    <Route path="achievements" element={<AchievementsPage />} />
+                    <Route path="timeline" element={<TimelinePage />} />
+                    <Route path="metrics" element={<MetricsPage />} />
+                    <Route path="testimonials" element={<TestimonialsPage />} />
+                    <Route path="open-source" element={<OpenSourcePage />} />
+                    <Route path="talks" element={<TalksWritingPage />} />
+                    <Route path="services" element={<ServicesPage />} />
+                    <Route path="availability" element={<AvailabilityPage />} />
                     <Route path="*" element={<BlogBackprop />} />
                 </Route>
             </Routes>
