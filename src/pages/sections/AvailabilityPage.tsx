@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Stack, Card, CardContent, Button } from '@mui/material';
+import { Container, Typography, Stack, Card, CardContent, Button } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 
 const AvailabilityPage: React.FC = () => {

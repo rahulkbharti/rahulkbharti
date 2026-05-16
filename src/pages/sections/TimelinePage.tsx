@@ -17,6 +17,11 @@ const TIMELINE = [
         time: '2025 – Present',
         detail: 'Engineered a secure, multi-tenant database architecture using Prisma and PostgreSQL to keep institutional data completely isolated. Implemented custom, high-utility features including QR-code-based autonomous attendance systems and robust role-based access controls (RBAC).',
     },
+    {
+        title: 'Ekalsutra Edtech Pvt. Ltd. | Web Developer Intern',
+        time: 'October 2023 – December 2023',
+        detail: 'Developed a 15-module Admin Panel from Figma designs, improving workflow efficiency. Secured 20+ routes using JWT authentication mechanisms. Improved code quality in a 4-person team, contributing to a 15% increase in pre-deployment issue detection through rigorous peer code reviews. Optimized frontend performance using Lazy Loading and efficient API integrations.',
+    },
 ];
 
 const TimelinePage: React.FC = () => {
