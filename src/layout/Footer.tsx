@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <Box
             component="footer"
             sx={{
-                borderTop: '1px solid #444',
+                borderTop: '1px solid rgba(255, 255, 255, 0.08)',
                 py: 4,
                 mt: 'auto',
                 bgcolor: 'background.paper',
@@ -31,10 +31,10 @@ const Footer: React.FC = () => {
                                     gap: 1,
                                 }}
                             >
-                                <Box component="span" sx={{ color: 'primary.main' }}>Rahul</Box> Kumar Bharti
+                                <Box component="span" sx={{ color: 'primary.main' }}>Rahul</Box> Bharti
                             </Typography>
                             <Typography variant="body2" sx={{ color: 'text.secondary', mt: 0.5 }}>
-                                Full Stack Developer & AI Engineer
+                                Backend Engineer | SaaS | Platform | AI
                             </Typography>
                         </Box>
 
@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
                         </Stack>
                     </Box>
 
-                    <Divider sx={{ borderColor: '#333' }} />
+                    <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.08)' }} />
 
                     {/* Bottom Section: Copyright and Links */}
                     <Box
@@ -87,12 +87,23 @@ const Footer: React.FC = () => {
                         }}
                     >
                         <Typography variant="body2" sx={{ color: 'text.secondary', display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                            © {new Date().getFullYear()} Rahul Kumar Bharti. Made with{' '}
+                            © {new Date().getFullYear()} Rahul Bharti. Made with{' '}
                             <FavoriteIcon sx={{ fontSize: '1rem', color: 'primary.main' }} />
                         </Typography>
 
                         {/* Quick Links */}
                         <Stack direction="row" spacing={3}>
+                            <Link
+                                href="/rahulkbharti/about"
+                                sx={{
+                                    color: 'text.secondary',
+                                    textDecoration: 'none',
+                                    fontSize: '0.875rem',
+                                    '&:hover': { color: 'primary.main' },
+                                }}
+                            >
+                                About
+                            </Link>
                             <Link
                                 href="/rahulkbharti"
                                 sx={{

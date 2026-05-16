@@ -19,7 +19,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link as RouterLink } from 'react-router-dom';
 import DesktopSocialSidebar from './DesktopSocialSidebar';
 import Logo from './Logo';
 import LanguageSelector from './LanguageSelector';
@@ -28,10 +28,12 @@ import Footer from './Footer';
 
 
 const Links = [
-    { href: '#home', label: 'Home' },
-    { href: '#works', label: 'Works' },
-    { href: '#about-me', label: 'About-Me' },
-    { href: '#contacts', label: 'Contacts' },
+    { to: '/#home', label: 'Home' },
+    { to: '/about', label: 'About' },
+    { to: '/projects', label: 'Projects' },
+    { to: '/#skills', label: 'Skills' },
+    { to: '/#blog', label: 'Blog' },
+    { to: '/#contact', label: 'Contact' },
 ];
 
 
@@ -40,50 +42,80 @@ const darkTheme = createTheme({
     palette: {
         mode: 'dark',
         background: {
-            default: '#212428', // Dark background from image
-            paper: '#212428',
+            default: '#0f1115',
+            paper: '#151821',
         },
         primary: {
-            main: '#C86DD7', // Purple accent color from image
+            main: '#ffb454',
+            dark: '#e39a36',
+        },
+        secondary: {
+            main: '#5dd6c1',
         },
         text: {
-            primary: '#E0E0E0', // Light text
-            secondary: '#A0A0A0', // Dimmer text
+            primary: '#f2f2f2',
+            secondary: '#b5b8c5',
         },
     },
     typography: {
-        fontFamily: '"Fira Code", monospace',
+        fontFamily: '"Space Grotesk", "IBM Plex Sans", sans-serif',
         h1: {
-            fontSize: '2.5rem',
-            fontWeight: 600,
-            lineHeight: 1.3,
-            color: '#FFFFFF',
+            fontSize: '2.8rem',
+            fontWeight: 700,
+            lineHeight: 1.1,
+            letterSpacing: '-0.02em',
+            color: '#f7f7f7',
         },
-        body1: {
-            fontSize: '1rem',
-            color: '#A0A0A0',
+        h2: {
+            fontWeight: 700,
+            letterSpacing: '-0.01em',
+            color: '#f7f7f7',
         },
         h6: {
-            fontFamily: '"Fira Code", monospace',
             fontWeight: 700,
-            color: '#FFFFFF',
-        }
+            color: '#f7f7f7',
+        },
+        body1: {
+            fontSize: '1.05rem',
+            color: '#b5b8c5',
+        },
     },
     components: {
         MuiButton: {
             styleOverrides: {
-                outlinedPrimary: {
-                    borderColor: '#777',
-                    color: '#AAA',
+                root: {
+                    borderRadius: 999,
+                    textTransform: 'none',
+                    fontWeight: 600,
+                    letterSpacing: '0.01em',
+                    paddingInline: 20,
+                },
+                containedPrimary: {
+                    color: '#0f1115',
+                    boxShadow: '0 10px 30px rgba(255, 180, 84, 0.2)',
                     '&:hover': {
-                        borderColor: '#C86DD7',
-                        color: '#C86DD7',
-                        backgroundColor: 'rgba(200, 109, 215, 0.04)'
-                    }
-                }
-            }
-        }
-    }
+                        backgroundColor: '#ffb454',
+                        boxShadow: '0 12px 34px rgba(255, 180, 84, 0.28)',
+                    },
+                },
+                outlinedPrimary: {
+                    borderColor: 'rgba(255, 180, 84, 0.5)',
+                    color: '#ffb454',
+                    '&:hover': {
+                        borderColor: '#ffb454',
+                        backgroundColor: 'rgba(255, 180, 84, 0.1)',
+                    },
+                },
+            },
+        },
+        MuiCard: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 16,
+                },
+            },
+        },
+    },
 });
 
 const Layout: React.FC = () => {
@@ -95,7 +127,10 @@ const Layout: React.FC = () => {
     return (
         <ThemeProvider theme={darkTheme}>
             <CssBaseline />
-            <GlobalStyles styles={{ '@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap");': '' }} />
+            <GlobalStyles styles={{
+                '@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap");': '',
+                'a': { color: 'inherit' }
+            }} />
 
             {/* Desktop-only Social Sidebar */}
             <DesktopSocialSidebar />
@@ -171,19 +206,20 @@ const Layout: React.FC = () => {
                     </IconButton>
                 </Box>
                 <Stack spacing={3} sx={{ mt: 8, pl: 2 }}>
-                    {Links.map(({ href, label }) => (
+                    {Links.map(({ to, label }) => (
                         <Link
-                            href={href}
-                            key={href}
+                            component={RouterLink}
+                            to={to}
+                            key={to}
                             sx={{
-                                color: 'primary.main',
+                                color: 'text.secondary',
                                 textDecoration: 'none',
                                 fontSize: '2.2rem',
                             }}
                         >
                             #<Box component="span" sx={{
                                 color: 'primary.main',
-                                fontWeight: 'bold',
+                                fontWeight: 700,
                                 '&:hover': {
                                     color: 'white',
                                 },
@@ -196,13 +232,13 @@ const Layout: React.FC = () => {
                     <LanguageSelector />
                 </Box>
                 <Stack direction="row" spacing={4} sx={{ pl: 2, mb: 4 }}>
-                    <IconButton href="https://github.com" target="_blank" sx={{ color: 'white' }}>
+                    <IconButton href="https://github.com" target="_blank" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
                         <GitHubIcon fontSize="large" />
                     </IconButton>
-                    <IconButton href="https://www.linkedin.com/in/rahul-kbharti" target="_blank" sx={{ color: 'white' }}>
+                    <IconButton href="https://www.linkedin.com/in/rahul-kbharti" target="_blank" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
                         <LinkedInIcon fontSize="large" />
                     </IconButton>
-                    <IconButton href="mailto:rahul.kbharti2002@gmail.com" target="_blank" sx={{ color: 'white' }}>
+                    <IconButton href="mailto:rahul.kbharti2002@gmail.com" target="_blank" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
                         <EmailIcon style={{ fontSize: '2.1875rem' }} />
                     </IconButton>
                 </Stack>

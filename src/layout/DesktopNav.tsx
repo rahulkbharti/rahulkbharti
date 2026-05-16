@@ -1,31 +1,35 @@
 import { Box, Link, Stack } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 import LanguageSelector from "./LanguageSelector";
 
 
 const Links = [
-    { href: '#home', label: 'Home' },
-    { href: '#works', label: 'Works' },
-    { href: '#about-me', label: 'About-Me' },
-    { href: '#contacts', label: 'Contacts' },
+    { to: '/#home', label: 'Home' },
+    { to: '/about', label: 'About' },
+    { to: '/projects', label: 'Projects' },
+    { to: '/#skills', label: 'Skills' },
+    { to: '/#blog', label: 'Blog' },
+    { to: '/#contact', label: 'Contact' },
 ];
 
 const DesktopNav: React.FC = () => (
     <Stack direction="row" spacing={3} alignItems="center">
-        {Links.map(({ href, label }) => (
+        {Links.map(({ to, label }) => (
             <Link
-                href={href}
-                key={href}
+                component={RouterLink}
+                to={to}
+                key={to}
                 sx={{
-                    color: 'primary.main',
+                    color: 'text.secondary',
                     textDecoration: 'none',
+                    fontSize: '0.95rem',
+                    letterSpacing: '0.02em',
+                    '&:hover': { color: 'primary.main' },
                 }}
             >
                 #<Box component="span" sx={{
-                    color: 'primary.main', fontSize: '1rem',
-                    fontWeight: 'bold',
-                    '&:hover': {
-                        color: 'white',
-                    },
+                    color: 'inherit',
+                    fontWeight: 600,
                 }}>{label}</Box>
             </Link>
         ))}

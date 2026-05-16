@@ -15,7 +15,7 @@ const BlogList: React.FC = () => {
     const items = useMemo(() => POSTS.slice().sort((a, b) => (a.date < b.date ? 1 : -1)), []);
 
     return (
-        <Container maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
+        <Container id="blog" maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
             {/* Header */}
             <Box sx={{ mb: 6 }}>
                 <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, mb: 2, fontWeight: 'bold' }}>
@@ -30,7 +30,7 @@ const BlogList: React.FC = () => {
                 {items.map((post) => {
                     const like = getStoredLikes(post.id, post.likes);
                     return (
-                        <Card key={post.id} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, border: '1px solid #444', bgcolor: 'background.paper', overflow: 'hidden' }}>
+                        <Card key={post.id} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, border: '1px solid rgba(255, 255, 255, 0.08)', bgcolor: 'background.paper', overflow: 'hidden' }}>
                             {post.coverImage && (
                                 <CardMedia component="img" image={post.coverImage} alt={post.title} sx={{ width: { md: 260 }, height: { xs: 180, md: 'auto' }, objectFit: 'cover' }} />
                             )}
@@ -43,7 +43,16 @@ const BlogList: React.FC = () => {
                                 </Typography>
                                 <Stack direction="row" spacing={1} sx={{ mt: 1, flexWrap: 'wrap' }}>
                                     {post.tags.map((t) => (
-                                        <Chip key={t} label={t} size="small" sx={{ bgcolor: 'rgba(200, 109, 215, 0.08)', color: 'primary.main', border: '1px solid rgba(200, 109, 215, 0.28)' }} />
+                                        <Chip
+                                            key={t}
+                                            label={t}
+                                            size="small"
+                                            sx={{
+                                                bgcolor: 'rgba(255, 180, 84, 0.12)',
+                                                color: 'primary.main',
+                                                border: '1px solid rgba(255, 180, 84, 0.32)'
+                                            }}
+                                        />
                                     ))}
                                 </Stack>
                                 <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1.5 }}>

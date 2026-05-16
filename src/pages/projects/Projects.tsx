@@ -1,61 +1,10 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardContent, Chip, Button, Stack } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LaunchIcon from '@mui/icons-material/Launch';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-
-interface Project {
-    id: number;
-    title: string;
-    description: string;
-    technologies: string[];
-    images?: string[];
-    githubUrl?: string;
-    liveUrl?: string;
-}
-
-const PROJECTS: Project[] = [
-    {
-        id: 1,
-        title: "Streamlet | A Microservices-Based Video Streaming Platform",
-        description: "A microservices-based video streaming platform built with modern technologies for scalability and performance.",
-        technologies: ["Node.js", "PostgreSQL", "Express", "MongoDB", "Docker", "Next.js"],
-        images: [
-            "/rahulkbharti/projects/streamlet1-home.png",
-            "/rahulkbharti/projects/streamlet2-player.png",
-        ],
-        githubUrl: "https://github.com/rahulkbharti/streamlet-microservices.git",
-        liveUrl: "https://streamlet.rahulkbharti.me"
-    },
-    {
-        id: 2,
-        title: "Nexus Core | Multi-Tenant SaaS ERP for Library System",
-        description: "A comprehensive ERP solution designed for library management, featuring user authentication, role-based access, and real-time analytics.",
-        technologies: ["Node.js", "React.js", "Docker", "Redis", "jwt", "Configurable RBAC", "PostgreSQL", "Prisma ORM"],
-        images: [
-            "/rahulkbharti/projects/nexuscore1-dark.png",
-            "/rahulkbharti/projects/nexuscore2-light.png",
-        ],
-        githubUrl: "https://github.com/rahulkbharti/nexus-core-backend.git",
-        liveUrl: "https://nexuscore.rahulkbharti.me"
-    },
-    {
-        id: 3,
-        title: "MeshTalk | Peer-to-Peer Real-Time Video Chat App",
-        description: "A peer-to-peer video chat application built with WebRTC and modern web technologies.",
-        technologies: ["TypeScript", "React", "WebRTC", "Node.js", "Socket.io"],
-        images: [
-            "/rahulkbharti/projects/mesh-talk.png",
-            "/rahulkbharti/projects/mesh-talk3.png",
-            "/rahulkbharti/projects/mesh-talk4.png",
-        ],
-        githubUrl: "https://github.com/rahulkbharti/mesh-talk.git",
-        liveUrl: "https://rahulkbharti.github.io/mesh-talk/"
-    },
-];
+import DescriptionIcon from '@mui/icons-material/Description';
+import { PROJECTS } from '../../data/projects';
 
 const Projects: React.FC = () => {
     return (
@@ -70,10 +19,10 @@ const Projects: React.FC = () => {
                         fontWeight: 'bold'
                     }}
                 >
-                    <Box component="span" sx={{ color: 'primary.main' }}>#</Box>Projects
+                    <Box component="span" sx={{ color: 'primary.main' }}>#</Box>Featured Projects
                 </Typography>
                 <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                    List of my projects
+                    A curated selection of projects that highlight my core backend and platform work.
                 </Typography>
             </Box>
 
@@ -81,13 +30,14 @@ const Projects: React.FC = () => {
             <Box
                 sx={{
                     position: 'absolute',
-                    width: 100,
-                    height: 100,
-                    border: '2px solid #C86DD7',
+                    width: 110,
+                    height: 110,
+                    border: '1px solid rgba(255, 180, 84, 0.25)',
+                    borderRadius: 3,
                     top: 100,
                     right: '10%',
                     zIndex: 0,
-                    opacity: 0.2,
+                    opacity: 0.3,
                     display: { xs: 'none', md: 'block' }
                 }}
             />
@@ -102,57 +52,15 @@ const Projects: React.FC = () => {
                                 display: 'flex',
                                 flexDirection: 'column',
                                 bgcolor: 'background.paper',
-                                border: '1px solid #444',
+                                border: '1px solid rgba(255, 255, 255, 0.08)',
                                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                                 '&:hover': {
                                     transform: 'translateY(-8px)',
-                                    boxShadow: '0 8px 24px rgba(200, 109, 215, 0.2)',
+                                    boxShadow: '0 12px 34px rgba(255, 180, 84, 0.2)',
                                     borderColor: 'primary.main'
                                 }
                             }}
                         >
-                            {/* Project Image Slider */}
-                            {project.images && project.images.length > 0 && (
-                                <Box
-                                    sx={{
-                                        position: 'relative',
-                                        '& .swiper': {
-                                            height: 250,
-                                        },
-                                        '& .swiper-pagination-bullet': {
-                                            bgcolor: 'rgba(200, 109, 215, 0.4)',
-                                        },
-                                        '& .swiper-pagination-bullet-active': {
-                                            bgcolor: 'primary.main',
-                                        },
-                                    }}
-                                >
-                                    <Swiper
-                                        modules={[Pagination, Autoplay]}
-                                        pagination={{ clickable: true }}
-                                        autoplay={{ delay: 3000, disableOnInteraction: false }}
-                                        loop={project.images.length > 1}
-                                    // style={{ height: 200 }}
-                                    >
-                                        {project.images.map((img, idx) => (
-                                            <SwiperSlide key={idx}>
-                                                <Box
-                                                    component="img"
-                                                    src={img}
-                                                    alt={`${project.title} screenshot ${idx + 1}`}
-                                                    sx={{
-                                                        width: '100%',
-                                                        // height: 200,
-                                                        // objectFit: 'cover',
-                                                        bgcolor: '#2a2d32',
-                                                    }}
-                                                />
-                                            </SwiperSlide>
-                                        ))}
-                                    </Swiper>
-                                </Box>
-                            )}
-
                             <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
                                 {/* Project Title */}
                                 <Typography
@@ -172,24 +80,28 @@ const Projects: React.FC = () => {
                                     sx={{
                                         color: 'text.secondary',
                                         mb: 2,
-                                        flexGrow: 1
+                                        flexGrow: 1,
+                                        display: '-webkit-box',
+                                        WebkitLineClamp: 3,
+                                        WebkitBoxOrient: 'vertical',
+                                        overflow: 'hidden'
                                     }}
                                 >
-                                    {project.description}
+                                    {project.overview}
                                 </Typography>
 
                                 {/* Technologies */}
                                 <Box sx={{ mb: 2 }}>
                                     <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
-                                        {project.technologies.map((tech, index) => (
+                                        {project.stack.map((tech, index) => (
                                             <Chip
                                                 key={index}
                                                 label={tech}
                                                 size="small"
                                                 sx={{
-                                                    bgcolor: 'rgba(200, 109, 215, 0.1)',
+                                                    bgcolor: 'rgba(255, 180, 84, 0.12)',
                                                     color: 'primary.main',
-                                                    border: '1px solid rgba(200, 109, 215, 0.3)',
+                                                    border: '1px solid rgba(255, 180, 84, 0.35)',
                                                     fontSize: '0.75rem'
                                                 }}
                                             />
@@ -198,7 +110,31 @@ const Projects: React.FC = () => {
                                 </Box>
 
                                 {/* Action Buttons */}
-                                <Box sx={{ display: 'flex', gap: 1, mt: 'auto' }}>
+                                <Box sx={{ display: 'flex', gap: 1, mt: 'auto', flexWrap: 'wrap' }}>
+                                    <Button
+                                        variant="outlined"
+                                        size="small"
+                                        startIcon={<DescriptionIcon />}
+                                        component={RouterLink}
+                                        to={`/projects/${project.slug}`}
+                                        sx={{
+                                            flex: '0 0 auto',
+                                            minHeight: 30,
+                                            px: 1.25,
+                                            py: 0.4,
+                                            fontSize: '0.75rem',
+                                            textTransform: 'none',
+                                            borderColor: 'rgba(255, 255, 255, 0.18)',
+                                            color: 'text.secondary',
+                                            '&:hover': {
+                                                borderColor: 'primary.main',
+                                                color: 'primary.main',
+                                                bgcolor: 'rgba(255, 180, 84, 0.08)'
+                                            }
+                                        }}
+                                    >
+                                        Case study
+                                    </Button>
                                     {project.liveUrl && (
                                         <Button
                                             variant="outlined"
@@ -207,12 +143,17 @@ const Projects: React.FC = () => {
                                             href={project.liveUrl}
                                             target="_blank"
                                             sx={{
-                                                flex: 1,
+                                                flex: '0 0 auto',
+                                                minHeight: 30,
+                                                px: 1.25,
+                                                py: 0.4,
+                                                fontSize: '0.75rem',
+                                                textTransform: 'none',
                                                 borderColor: 'primary.main',
                                                 color: 'primary.main',
                                                 '&:hover': {
-                                                    borderColor: 'primary.light',
-                                                    bgcolor: 'rgba(200, 109, 215, 0.1)'
+                                                    borderColor: 'primary.main',
+                                                    bgcolor: 'rgba(255, 180, 84, 0.12)'
                                                 }
                                             }}
                                         >
@@ -227,12 +168,18 @@ const Projects: React.FC = () => {
                                             href={project.githubUrl}
                                             target="_blank"
                                             sx={{
-                                                flex: 1,
-                                                borderColor: '#444',
+                                                flex: '0 0 auto',
+                                                minHeight: 30,
+                                                px: 1.25,
+                                                py: 0.4,
+                                                fontSize: '0.75rem',
+                                                textTransform: 'none',
+                                                borderColor: 'rgba(255, 255, 255, 0.18)',
                                                 color: 'text.secondary',
                                                 '&:hover': {
-                                                    borderColor: '#666',
-                                                    bgcolor: 'rgba(255, 255, 255, 0.05)'
+                                                    borderColor: 'primary.main',
+                                                    color: 'primary.main',
+                                                    bgcolor: 'rgba(255, 180, 84, 0.08)'
                                                 }
                                             }}
                                         >
@@ -245,6 +192,12 @@ const Projects: React.FC = () => {
                     </Grid>
                 ))}
             </Grid>
+
+            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 5 }}>
+                <Button variant="outlined" component={RouterLink} to="/projects">
+                    View all projects
+                </Button>
+            </Box>
 
             {/* Decorative bottom square */}
             <Box sx={{

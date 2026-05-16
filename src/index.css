@@ -1,12 +1,4 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,6 +6,31 @@
 }
 * {
   box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(
+      1200px 600px at 10% -10%,
+      rgba(255, 180, 84, 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 90% 10%,
+      rgba(93, 214, 193, 0.12),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #0f1115 0%, #12161f 60%, #0f1115 100%);
+  color: #f2f2f2;
+}
+
+::selection {
+  background: rgba(255, 180, 84, 0.3);
+  color: #0f1115;
 }
 
 html {
@@ -25,7 +42,7 @@ html {
   display: inline-block;
   width: 3px;
   height: 1rem; /* Font size ke match karein */
-  background-color: #61dafb;
+  background-color: #ffb454;
   margin-left: 5px;
   animation: blink 0.8s infinite;
   vertical-align: middle;

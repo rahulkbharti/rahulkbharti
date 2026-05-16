@@ -1,104 +1,85 @@
 import React from 'react';
-import { Box, Container, Typography, Card, CardContent, Chip, Stack, LinearProgress, Tooltip } from '@mui/material';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-coverflow';
+import { Box, Container, Typography, Card, CardContent, Chip, Stack, Grid, Button, Link } from '@mui/material';
 
-interface SkillItem {
-    name: string;
-    level?: number; // 0-100
-}
-
-interface SkillCategory {
+interface SkillGroup {
     id: string;
     title: string;
-    skills: SkillItem[];
+    description: string;
+    items: string[];
+    tone?: 'primary' | 'secondary' | 'support';
 }
 
-const SKILL_CATEGORIES: SkillCategory[] = [
+const OVERVIEW =
+    'Backend-first engineer focused on reliability, performance, and scalable SaaS architecture.';
+
+const SKILL_GROUPS: SkillGroup[] = [
     {
-        id: 'languages',
-        title: 'Programming Languages',
-        skills: [
-            { name: 'TypeScript', level: 85 },
-            { name: 'JavaScript', level: 90 },
-            { name: 'Python', level: 80 },
-            { name: 'SQL', level: 75 },
-            { name: 'C++', level: 60 },
-        ],
+        id: 'primary-backend',
+        title: 'Primary: Backend Engineering',
+        description: 'The core stack I use to build reliable, high throughput services.',
+        items: ['Node.js', 'TypeScript', 'JavaScript (ES6+)', 'Express.js', 'NestJS'],
+        tone: 'primary',
     },
     {
-        id: 'frontend',
-        title: 'Frontend Frameworks & UI',
-        skills: [
-            { name: 'React', level: 90 },
-            { name: 'Next.js', level: 70 },
-            { name: 'Redux/RTK', level: 75 },
-            { name: 'Material UI', level: 85 },
-            { name: 'Tailwind CSS', level: 70 },
-        ],
+        id: 'primary-data',
+        title: 'Primary: Data and Persistence',
+        description: 'Storage, caching, and data access layers that scale cleanly.',
+        items: ['PostgreSQL', 'MongoDB', 'Redis', 'Prisma', 'Mongoose'],
+        tone: 'primary',
     },
     {
-        id: 'backend',
-        title: 'Backend & APIs',
-        skills: [
-            { name: 'Node.js', level: 85 },
-            { name: 'Express', level: 85 },
-            { name: 'REST', level: 90 },
-            { name: 'GraphQL', level: 60 },
-            { name: 'WebSockets', level: 65 },
-        ],
+        id: 'secondary-frontend',
+        title: 'Secondary: Product Delivery',
+        description: 'Frontend toolset for shipping complete product experiences.',
+        items: ['React.js', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS'],
+        tone: 'secondary',
     },
     {
-        id: 'databases',
-        title: 'Databases & Caching',
-        skills: [
-            { name: 'MongoDB', level: 85 },
-            { name: 'PostgreSQL', level: 70 },
-            { name: 'Redis', level: 65 },
-            { name: 'Elasticsearch', level: 55 },
-        ],
+        id: 'secondary-arch',
+        title: 'Secondary: Architecture and DevOps',
+        description: 'System design, API structure, and scalable delivery workflows.',
+        items: ['Microservices', 'Multi-tenant SaaS', 'REST APIs', 'RBAC', 'Docker', 'VPS Deployment'],
+        tone: 'secondary',
     },
     {
-        id: 'cloud-devops',
-        title: 'Cloud & DevOps',
-        skills: [
-            { name: 'Docker', level: 75 },
-            { name: 'Kubernetes', level: 55 },
-            { name: 'AWS', level: 60 },
-            { name: 'CI/CD (GitHub Actions)', level: 70 },
-            { name: 'Nginx', level: 60 },
-        ],
+        id: 'secondary-ai',
+        title: 'Secondary: Media and AI Workflows',
+        description: 'Specialized systems for streaming, delivery, and AI automation.',
+        items: ['SRS', 'FFmpeg', 'Bunny.net CDN', 'Gemini API', 'Tool calling'],
+        tone: 'secondary',
     },
     {
-        id: 'ml-ai',
-        title: 'AI / Machine Learning',
-        skills: [
-            { name: 'NLP', level: 70 },
-            { name: 'LangChain', level: 65 },
-            { name: 'Vector DBs (FAISS/PGVector)', level: 60 },
-            { name: 'OpenAI APIs', level: 75 },
-            { name: 'Model Serving', level: 55 },
-        ],
+        id: 'supporting-business',
+        title: 'Supporting: Product and Operations',
+        description: 'Business-aware delivery and operational readiness for SaaS.',
+        items: ['MVP scoping', 'Roadmaps', 'SaaS metrics', 'Cloud cost control', 'CI/CD mindset'],
+        tone: 'support',
     },
     {
-        id: 'tools',
-        title: 'Tools & Practices',
-        skills: [
-            { name: 'Git & GitHub', level: 90 },
-            { name: 'Jest/Testing', level: 65 },
-            { name: 'ESLint/Prettier', level: 80 },
-            { name: 'Agile/Scrum', level: 70 },
-            { name: 'System Design', level: 70 },
-        ],
+        id: 'supporting-knowledge',
+        title: 'Supporting: Knowledge Systems',
+        description: 'Structured documentation that keeps complex work organized.',
+        items: ['Notion', 'Obsidian', 'Second brain workflows', 'System documentation'],
+        tone: 'support',
     },
 ];
 
+const toneStyles = {
+    primary: {
+        border: '1px solid rgba(255, 180, 84, 0.45)',
+        boxShadow: '0 12px 30px rgba(255, 180, 84, 0.15)'
+    },
+    secondary: {
+        border: '1px solid rgba(93, 214, 193, 0.35)'
+    },
+    support: {
+        border: '1px solid rgba(255, 255, 255, 0.12)'
+    },
+} as const;
+
 const Skills: React.FC = () => {
     return (
-        <Container maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
+        <Container id="skills" maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
             {/* Page Header */}
             <Box sx={{ mb: 6 }}>
                 <Typography
@@ -107,9 +88,38 @@ const Skills: React.FC = () => {
                 >
                     <Box component="span" sx={{ color: 'primary.main' }}>#</Box>Skills
                 </Typography>
-                <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                    Category-wise overview of my skills and strengths
+                <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 720 }}>
+                    {OVERVIEW}
                 </Typography>
+                <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} sx={{ mt: 3 }}>
+                    <Chip
+                        label="Primary: Backend and Data"
+                        size="small"
+                        sx={{
+                            bgcolor: 'rgba(255, 180, 84, 0.12)',
+                            color: 'primary.main',
+                            border: '1px solid rgba(255, 180, 84, 0.32)'
+                        }}
+                    />
+                    <Chip
+                        label="Secondary: Architecture, AI, Product Delivery"
+                        size="small"
+                        sx={{
+                            bgcolor: 'rgba(93, 214, 193, 0.1)',
+                            color: 'secondary.main',
+                            border: '1px solid rgba(93, 214, 193, 0.32)'
+                        }}
+                    />
+                    <Chip
+                        label="Supporting: Product and Ops"
+                        size="small"
+                        sx={{
+                            bgcolor: 'rgba(255, 255, 255, 0.06)',
+                            color: 'text.secondary',
+                            border: '1px solid rgba(255, 255, 255, 0.12)'
+                        }}
+                    />
+                </Stack>
             </Box>
 
             {/* Decorative accent box (desktop) */}
@@ -118,7 +128,8 @@ const Skills: React.FC = () => {
                     position: 'absolute',
                     width: 100,
                     height: 100,
-                    border: '2px solid #C86DD7',
+                    border: '1px solid rgba(93, 214, 193, 0.3)',
+                    borderRadius: 3,
                     top: 100,
                     left: '8%',
                     zIndex: 0,
@@ -127,121 +138,49 @@ const Skills: React.FC = () => {
                 }}
             />
 
-            {/* Slider of categories (left-aligned with bottom dots) */}
-            <Box
-                sx={{
-                    position: 'relative',
-                    // Pagination dots theme
-                    '& .swiper-pagination-bullet': {
-                        bgcolor: 'rgba(200, 109, 215, 0.3)'
-                    },
-                    '& .swiper-pagination-bullet-active': {
-                        bgcolor: 'primary.main'
-                    },
-                    // 3D emphasis: active centered card highlighted; sides dulled
-                    '& .swiper-slide .MuiCard-root': {
-                        opacity: 0.5,
-                        transform: 'scale(0.92)',
-                        transition: 'opacity 0.3s ease, transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease'
-                    },
-                    '& .swiper-slide-prev .MuiCard-root, & .swiper-slide-next .MuiCard-root': {
-                        opacity: 0.7,
-                        transform: 'scale(0.96)'
-                    },
-                    '& .swiper-slide-active .MuiCard-root': {
-                        opacity: 1,
-                        transform: 'scale(1.02)',
-                        borderColor: 'primary.main',
-                        boxShadow: '0 10px 28px rgba(200, 109, 215, 0.18)'
-                    }
-                }}
-            >
-                <Swiper
-                    modules={[Pagination, Autoplay, EffectCoverflow]}
-                    effect="coverflow"
-                    centeredSlides
-                    loop
-                    spaceBetween={16}
-                    slidesPerView={1.6}
-                    breakpoints={{
-                        480: { slidesPerView: 1.7, spaceBetween: 16 },
-                        640: { slidesPerView: 1.8, spaceBetween: 18 },
-                        900: { slidesPerView: 3, spaceBetween: 24 },
-                    }}
-                    coverflowEffect={{
-                        rotate: 0,
-                        stretch: 0,
-                        depth: 140,
-                        modifier: 1.2,
-                        slideShadows: false,
-                    }}
-                    pagination={{ clickable: true }}
-                    autoplay={{ delay: 3500, disableOnInteraction: false }}
-                    style={{ paddingBottom: 32 }}
-                >
-                    {SKILL_CATEGORIES.map((cat) => (
-                        <SwiperSlide key={cat.id}>
-                            <Card
-                                sx={{
-                                    border: '1px solid #444',
-                                    bgcolor: 'background.paper',
-                                    width: { xs: '92%', md: '100%' },
-                                    mx: 'auto',
-                                    transition: 'border-color 0.25s ease, box-shadow 0.25s ease',
-                                    '&:hover': {
-                                        borderColor: 'primary.main',
-                                        boxShadow: '0 8px 24px rgba(200, 109, 215, 0.12)',
-                                    },
-                                }}
-                            >
-                                <CardContent>
-                                    <Typography variant="h6" sx={{ color: 'white', fontWeight: 700, mb: 2 }}>
-                                        {cat.title}
+            <Grid container spacing={3}>
+                {SKILL_GROUPS.map((group) => (
+                    <Grid key={group.id} size={{ xs: 12, md: 6 }}>
+                        <Card
+                            sx={{
+                                height: '100%',
+                                bgcolor: 'background.paper',
+                                ...toneStyles[group.tone ?? 'support'],
+                            }}
+                        >
+                            <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                                <Box>
+                                    <Typography variant="h6" sx={{ fontWeight: 700 }}>
+                                        {group.title}
                                     </Typography>
+                                    <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
+                                        {group.description}
+                                    </Typography>
+                                </Box>
+                                <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+                                    {group.items.map((item) => (
+                                        <Chip
+                                            key={item}
+                                            label={item}
+                                            size="small"
+                                            sx={{
+                                                bgcolor: 'rgba(255, 255, 255, 0.06)',
+                                                color: 'text.secondary',
+                                                border: '1px solid rgba(255, 255, 255, 0.14)',
+                                            }}
+                                        />
+                                    ))}
+                                </Stack>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                ))}
+            </Grid>
 
-                                    <Stack spacing={1.5}>
-                                        {cat.skills.map((s) => (
-                                            <Box key={s.name} sx={{ display: 'flex', flexDirection: 'column', gap: 0.75 }}>
-                                                <Stack direction="row" spacing={1} alignItems="center" justifyContent="space-between">
-                                                    <Chip
-                                                        label={s.name}
-                                                        size="small"
-                                                        sx={{
-                                                            bgcolor: 'rgba(200, 109, 215, 0.08)',
-                                                            color: 'primary.main',
-                                                            border: '1px solid rgba(200, 109, 215, 0.28)',
-                                                            fontSize: '0.8rem',
-                                                        }}
-                                                    />
-                                                    {typeof s.level === 'number' && (
-                                                        <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-                                                            {s.level}%
-                                                        </Typography>
-                                                    )}
-                                                </Stack>
-
-                                                {typeof s.level === 'number' && (
-                                                    <Tooltip title={`${s.name}: ${s.level}%`} placement="top" arrow>
-                                                        <LinearProgress
-                                                            variant="determinate"
-                                                            value={s.level}
-                                                            sx={{
-                                                                height: 6,
-                                                                borderRadius: 1,
-                                                                bgcolor: 'rgba(255,255,255,0.06)',
-                                                                '& .MuiLinearProgress-bar': { bgcolor: 'primary.main' },
-                                                            }}
-                                                        />
-                                                    </Tooltip>
-                                                )}
-                                            </Box>
-                                        ))}
-                                    </Stack>
-                                </CardContent>
-                            </Card>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 5 }}>
+                <Button variant="outlined" component={Link} href="/rahulkbharti/skills">
+                    View full skills profile
+                </Button>
             </Box>
 
             {/* Decorative bottom-right square (Desktop only) */}
@@ -253,7 +192,7 @@ const Skills: React.FC = () => {
                     right: 40,
                     width: 100,
                     height: 100,
-                    border: '1px solid #444',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
                     zIndex: -1,
                 }}
             />

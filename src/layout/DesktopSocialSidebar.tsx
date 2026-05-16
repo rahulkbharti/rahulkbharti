@@ -19,13 +19,13 @@ const DesktopSocialSidebar: React.FC = () => (
             // borderRight: '1px solid #333',
         }}
     >
-        <IconButton href="https://github.com/rahulkbharti" target="_blank" sx={{ color: 'white' }}>
+        <IconButton href="https://github.com/rahulkbharti" target="_blank" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
             <GitHubIcon />
         </IconButton>
-        <IconButton href="https://www.linkedin.com/in/rahul-kbharti/" target="_blank" sx={{ color: 'white' }}>
+        <IconButton href="https://www.linkedin.com/in/rahul-kbharti/" target="_blank" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
             <LinkedInIcon />
         </IconButton>
-        <IconButton href="mailto:rahul.kbharti2002@gmail.com" target="_blank" sx={{ color: 'white' }}>
+        <IconButton href="mailto:rahul.kbharti2002@gmail.com" target="_blank" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
             <EmailIcon />
         </IconButton>
     </Box>

@@ -72,7 +72,8 @@ const Contact: React.FC = () => {
                     position: 'absolute',
                     width: 100,
                     height: 100,
-                    border: '2px solid #C86DD7',
+                    border: '1px solid rgba(255, 180, 84, 0.3)',
+                    borderRadius: 3,
                     top: 120,
                     right: '10%',
                     zIndex: 0,
@@ -89,12 +90,12 @@ const Contact: React.FC = () => {
                         onSubmit={handleSubmit}
                         sx={{
                             p: 4,
-                            border: '1px solid #444',
+                            border: '1px solid rgba(255, 255, 255, 0.08)',
                             bgcolor: 'background.paper',
                             transition: 'border-color 0.25s ease, box-shadow 0.25s ease',
                             '&:hover': {
                                 borderColor: 'primary.main',
-                                boxShadow: '0 8px 24px rgba(200, 109, 215, 0.12)',
+                                boxShadow: '0 10px 26px rgba(255, 180, 84, 0.12)',
                             },
                         }}
                     >
@@ -109,8 +110,8 @@ const Contact: React.FC = () => {
                                 variant="outlined"
                                 sx={{
                                     '& .MuiOutlinedInput-root': {
-                                        '& fieldset': { borderColor: '#444' },
-                                        '&:hover fieldset': { borderColor: '#666' },
+                                        '& fieldset': { borderColor: 'rgba(255, 255, 255, 0.2)' },
+                                        '&:hover fieldset': { borderColor: 'rgba(255, 255, 255, 0.35)' },
                                         '&.Mui-focused fieldset': { borderColor: 'primary.main' },
                                     },
                                     '& .MuiInputLabel-root.Mui-focused': { color: 'primary.main' },
@@ -128,8 +129,8 @@ const Contact: React.FC = () => {
                                 variant="outlined"
                                 sx={{
                                     '& .MuiOutlinedInput-root': {
-                                        '& fieldset': { borderColor: '#444' },
-                                        '&:hover fieldset': { borderColor: '#666' },
+                                        '& fieldset': { borderColor: 'rgba(255, 255, 255, 0.2)' },
+                                        '&:hover fieldset': { borderColor: 'rgba(255, 255, 255, 0.35)' },
                                         '&.Mui-focused fieldset': { borderColor: 'primary.main' },
                                     },
                                     '& .MuiInputLabel-root.Mui-focused': { color: 'primary.main' },
@@ -146,8 +147,8 @@ const Contact: React.FC = () => {
                                 variant="outlined"
                                 sx={{
                                     '& .MuiOutlinedInput-root': {
-                                        '& fieldset': { borderColor: '#444' },
-                                        '&:hover fieldset': { borderColor: '#666' },
+                                        '& fieldset': { borderColor: 'rgba(255, 255, 255, 0.2)' },
+                                        '&:hover fieldset': { borderColor: 'rgba(255, 255, 255, 0.35)' },
                                         '&.Mui-focused fieldset': { borderColor: 'primary.main' },
                                     },
                                     '& .MuiInputLabel-root.Mui-focused': { color: 'primary.main' },
@@ -166,8 +167,8 @@ const Contact: React.FC = () => {
                                 variant="outlined"
                                 sx={{
                                     '& .MuiOutlinedInput-root': {
-                                        '& fieldset': { borderColor: '#444' },
-                                        '&:hover fieldset': { borderColor: '#666' },
+                                        '& fieldset': { borderColor: 'rgba(255, 255, 255, 0.2)' },
+                                        '&:hover fieldset': { borderColor: 'rgba(255, 255, 255, 0.35)' },
                                         '&.Mui-focused fieldset': { borderColor: 'primary.main' },
                                     },
                                     '& .MuiInputLabel-root.Mui-focused': { color: 'primary.main' },
@@ -180,13 +181,13 @@ const Contact: React.FC = () => {
                                 endIcon={<SendIcon />}
                                 sx={{
                                     bgcolor: 'primary.main',
-                                    color: 'white',
+                                    color: '#0f1115',
                                     py: 1.5,
                                     fontSize: '1rem',
                                     fontWeight: 'bold',
                                     '&:hover': {
-                                        bgcolor: 'primary.dark',
-                                        boxShadow: '0 4px 12px rgba(200, 109, 215, 0.3)',
+                                        bgcolor: 'primary.main',
+                                        boxShadow: '0 8px 20px rgba(255, 180, 84, 0.3)',
                                     },
                                 }}
                             >
@@ -203,7 +204,7 @@ const Contact: React.FC = () => {
                         <Paper
                             sx={{
                                 p: 3,
-                                border: '1px solid #444',
+                                border: '1px solid rgba(255, 255, 255, 0.08)',
                                 bgcolor: 'background.paper',
                             }}
                         >
@@ -239,7 +240,7 @@ const Contact: React.FC = () => {
                         <Paper
                             sx={{
                                 p: 3,
-                                border: '1px solid #444',
+                                border: '1px solid rgba(255, 255, 255, 0.08)',
                                 bgcolor: 'background.paper',
                             }}
                         >

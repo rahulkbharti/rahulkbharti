@@ -7,147 +7,188 @@ import Skills from '../skills/Skills';
 import Contact from '../contact/Contact';
 import BlogList from '../blog/BlogList';
 
-const FULL_NAME = "Rahul Kumar Bharti";
+const FULL_NAME = "Rahul Bharti";
 const MY_ROLES = [
-    "Software Developer",
-    "MERN Stack",
+    "Backend Engineer",
     "SaaS Architect",
-    "Microservices"
+    "Platform Builder",
+    "AI Integrations"
 ];
 
 const Home: React.FC = () => {
     return (
         <>
-            <Container maxWidth="lg" sx={{ flexGrow: 1, margin: "0 auto", py: { xs: 3, md: 8 } }}>
-                <Grid container spacing={{ xs: 4, md: 8 }} alignItems="center">
+            <Container id="home" maxWidth="lg" sx={{ flexGrow: 1, margin: "0 auto", py: { xs: 4, md: 10 } }}>
+                <Grid container spacing={{ xs: 4, md: 10 }} alignItems="center">
 
                     {/* Left Column: Hero Text */}
                     <Grid size={{ xs: 12, md: 6 }}>
                         <Box sx={{ px: { xs: 1, md: 2 } }}>
+                            <Box
+                                sx={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: 1,
+                                    px: 1.5,
+                                    py: 0.6,
+                                    borderRadius: 999,
+                                    border: '1px solid rgba(255, 180, 84, 0.35)',
+                                    bgcolor: 'rgba(255, 180, 84, 0.08)',
+                                    color: 'primary.main',
+                                    fontSize: '0.75rem',
+                                    letterSpacing: '0.14em',
+                                    textTransform: 'uppercase',
+                                    fontWeight: 600,
+                                }}
+                            >
+                                Open to backend and platform roles
+                            </Box>
+
                             <Typography
                                 variant="h1"
                                 sx={{
-                                    fontSize: { xs: '2.5rem', md: '3rem' }, // Naam ko bada karein
+                                    fontSize: { xs: '2.4rem', md: '3.4rem' },
                                     fontWeight: 700,
-                                    lineHeight: 1.2
+                                    lineHeight: 1.05,
+                                    mt: 2
                                 }}
                             >
-                                Hey, I'm
-                                <Box component="span" sx={{ color: 'primary.main' }}> {FULL_NAME}</Box>.
+                                I build calm, resilient backend systems for ambitious products.
                             </Typography>
 
                             <Typography
-                                variant="h3" // Ise h2 banayein
+                                variant="h3"
                                 sx={{
-                                    fontSize: { xs: '1.8rem', md: '2.2rem' },
-                                    color: 'text.secondary', // Role ko thoda subtle karein
-                                    mt: 1
+                                    fontSize: { xs: '1.2rem', md: '1.4rem' },
+                                    color: 'text.secondary',
+                                    mt: 2
                                 }}
                             >
-                                Full Stack Developer & AI Engineer.
+                                Hello, I'm <Box component="span" sx={{ color: 'primary.main' }}>{FULL_NAME}</Box>. I design scalable services,
+                                clean data pipelines, and AI-ready platforms that stay fast under real-world load.
                             </Typography>
 
                             <Typography variant="body1" sx={{ mt: 3 }}>
-                                I build and scale end-to-end, intelligent SaaS platforms. Expert in architecting microservice-based MERN applications and deploying advanced NLP models from research to production.
+                                From API design to observability, I care about the invisible details that make your product feel effortless.
                             </Typography>
-                            <Typography variant='body1'>[<TypingEffect roles={MY_ROLES} />]</Typography>
-                            {/* New "Contact me" button for desktop */}
-                            <Button
-                                variant="outlined"
-                                color="primary"
-                                component={Link}
-                                href="#contact"
-                                sx={{
-                                    mt: 4,
-                                    display: { xs: 'none', md: 'inline-flex' } // Hide on mobile
-                                }}
-                            >
-                                Contact me !!
-                            </Button>
+                            <Typography variant="body1" sx={{ mt: 1 }}>
+                                [<TypingEffect roles={MY_ROLES} />]
+                            </Typography>
+
+                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: 4 }}>
+                                <Button variant="contained" component={Link} href="#contact">
+                                    Book a call
+                                </Button>
+                                <Button variant="outlined" component={Link} href="#works">
+                                    View projects
+                                </Button>
+                            </Box>
+
+                            <Box sx={{ display: 'flex', gap: { xs: 2, md: 4 }, mt: 5, flexWrap: 'wrap' }}>
+                                {[
+                                    { label: 'Production apps shipped', value: '12+' },
+                                    { label: 'Avg. API latency wins', value: '35%' },
+                                    { label: 'Years building platforms', value: '4+' },
+                                ].map((item) => (
+                                    <Box key={item.label} sx={{ minWidth: 140 }}>
+                                        <Typography variant="h6" sx={{ color: 'primary.main', fontWeight: 700 }}>
+                                            {item.value}
+                                        </Typography>
+                                        <Typography variant="caption" sx={{ color: 'text.secondary', letterSpacing: '0.03em' }}>
+                                            {item.label}
+                                        </Typography>
+                                    </Box>
+                                ))}
+                            </Box>
                         </Box>
                     </Grid>
 
                     {/* Right Column: Image & Banner */}
                     <Grid size={{ xs: 12, md: 6 }}>
-                        <Box sx={{ position: 'relative', width: '100%', maxWidth: '500px', margin: '0 auto' }}>
-                            {/* Decorative Squares */}
+                        <Box sx={{ position: 'relative', width: '100%', maxWidth: '520px', margin: '0 auto' }}>
                             <Box
                                 sx={{
                                     position: 'absolute',
-                                    width: 100,
-                                    height: 100,
-                                    border: '2px solid #C86DD7',
-                                    top: 20,
-                                    left: '10%',
+                                    inset: -24,
+                                    borderRadius: 6,
+                                    background: 'linear-gradient(140deg, rgba(255, 180, 84, 0.18), rgba(93, 214, 193, 0.16))',
+                                    filter: 'blur(32px)',
+                                    opacity: 0.8,
                                     zIndex: 0,
-                                    opacity: 0.3,
+                                }}
+                            />
+
+                            <Box
+                                sx={{
+                                    position: 'absolute',
+                                    width: 120,
+                                    height: 120,
+                                    borderRadius: '24px',
+                                    border: '1px solid rgba(255, 180, 84, 0.3)',
+                                    top: -10,
+                                    left: '6%',
+                                    zIndex: 1,
+                                    opacity: 0.4,
                                 }}
                             />
                             <Box
                                 sx={{
                                     position: 'absolute',
-                                    width: 100,
-                                    height: 100,
-                                    border: '2px solid #C86DD7',
-                                    top: 40,
-                                    left: '15%',
-                                    zIndex: 0,
-                                    opacity: 0.3,
+                                    width: 90,
+                                    height: 90,
+                                    borderRadius: '50%',
+                                    border: '1px solid rgba(93, 214, 193, 0.35)',
+                                    bottom: 10,
+                                    right: '4%',
+                                    zIndex: 1,
+                                    opacity: 0.4,
                                 }}
                             />
-                            {/* Decorative Dots */}
-                            <Box
-                                sx={{
-                                    position: 'absolute',
-                                    width: 80,
-                                    height: 80,
-                                    top: 50,
-                                    right: '10%',
-                                    zIndex: 0,
-                                    background: 'radial-gradient(#fff 1.5px, transparent 1.5px)',
-                                    backgroundSize: '10px 10px',
-                                    opacity: 0.2,
-                                }}
-                            />
-                            {/* Main Image Placeholder */}
+
                             <Box
                                 component="img"
-                                src="/rahulkbharti/s.png"
-                                alt="A person in a hoodie"
+                                src="/rahulkbharti/easlo-laptop.svg"
+                                alt="Laptop illustration"
                                 sx={{
                                     width: '100%',
                                     height: 'auto',
                                     display: 'block',
                                     position: 'relative',
-                                    zIndex: 1,
-                                    filter: 'grayscale(80%) contrast(1.1)',
+                                    zIndex: 2,
+                                    borderRadius: 4,
+                                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                                    boxShadow: '0 30px 70px rgba(0, 0, 0, 0.45)',
+                                    filter: 'grayscale(20%) contrast(1.05)',
                                 }}
                             />
 
-                            {/* Bottom Banner (Repositioned) */}
                             <Box
                                 sx={{
-                                    border: '1px solid #555',
-                                    p: 2,
-                                    mt: 2, // Placed below image
+                                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                                    p: 2.5,
+                                    mt: 2,
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: 2,
-                                    zIndex: 2,
-                                    background: 'rgba(33, 36, 40, 0.8)',
-                                    borderRadius: 1,
-                                    // On mobile, keep it at the bottom
+                                    zIndex: 3,
+                                    background: 'rgba(15, 17, 21, 0.8)',
+                                    borderRadius: 2,
                                     position: { xs: 'absolute', md: 'relative' },
                                     bottom: { xs: 16, md: 'auto' },
                                     left: { xs: 16, md: 'auto' },
                                     right: { xs: 16, md: 'auto' },
-                                    backdropFilter: { xs: 'blur(5px)', md: 'none' }
+                                    backdropFilter: { xs: 'blur(6px)', md: 'none' }
                                 }}
                             >
-                                <Box sx={{ width: 12, height: 12, bgcolor: 'primary.main', flexShrink: 0 }} />
-                                <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '0.9rem' }}>
-                                    Currently working on <Box component="span" sx={{ color: 'white', fontWeight: 'bold' }}>Portfolio</Box>
-                                </Typography>
+                                <Box sx={{ width: 10, height: 10, bgcolor: 'secondary.main', borderRadius: '50%', flexShrink: 0 }} />
+                                <Box>
+                                    <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '0.85rem' }}>
+                                        Currently shipping
+                                    </Typography>
+                                    <Typography variant="body1" sx={{ color: 'white', fontWeight: 600 }}>
+                                        Nexus Core platform refresh
+                                    </Typography>
+                                </Box>
                             </Box>
                         </Box>
                     </Grid>
@@ -170,13 +211,13 @@ const Home: React.FC = () => {
                     maxWidth: '600px',
                     margin: '0 auto',
                 }}>
-                    <FormatQuoteIcon sx={{ position: 'absolute', top: -16, left: 24, fontSize: '2rem', color: '#777', transform: 'scaleX(-1)' }} />
+                    <FormatQuoteIcon sx={{ position: 'absolute', top: -16, left: 24, fontSize: '2rem', color: 'rgba(255, 180, 84, 0.4)', transform: 'scaleX(-1)' }} />
                     <Typography variant="h6" sx={{ color: 'white', fontStyle: 'italic', textAlign: 'center' }}>
-                        With great power comes great electricity bill
+                        Good systems feel boring. I build the boring parts well.
                     </Typography>
-                    <FormatQuoteIcon sx={{ position: 'absolute', bottom: -16, right: 24, fontSize: '2rem', color: '#777' }} />
-                    <Typography sx={{ color: '#999', textAlign: 'right', mt: 2, mr: 2 }}>
-                        - Dr. Who
+                    <FormatQuoteIcon sx={{ position: 'absolute', bottom: -16, right: 24, fontSize: '2rem', color: 'rgba(93, 214, 193, 0.4)' }} />
+                    <Typography sx={{ color: 'text.secondary', textAlign: 'right', mt: 2, mr: 2 }}>
+                        - Rahul Bharti
                     </Typography>
                 </Box>
             </Box>
@@ -189,7 +230,7 @@ const Home: React.FC = () => {
                 right: 40,
                 width: 100,
                 height: 100,
-                border: '1px solid #444',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
                 zIndex: -1,
             }} />
             <Skills />
