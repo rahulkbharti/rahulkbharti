@@ -19,7 +19,7 @@ const Projects: React.FC = () => {
                         fontWeight: 'bold'
                     }}
                 >
-                    <Box component="span" sx={{ color: 'primary.main' }}>#</Box>Featured Projects
+                    Featured Projects
                 </Typography>
                 <Typography variant="body1" sx={{ color: 'text.secondary' }}>
                     A curated selection of projects that highlight my core backend and platform work.

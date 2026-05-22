@@ -19,7 +19,7 @@ const BlogList: React.FC = () => {
             {/* Header */}
             <Box sx={{ mb: 6 }}>
                 <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, mb: 2, fontWeight: 'bold' }}>
-                    <Box component="span" sx={{ color: 'primary.main' }}>#</Box>Blog
+                    Blog
                 </Typography>
                 <Typography variant="body1" sx={{ color: 'text.secondary' }}>
                     Thoughts and notes on engineering

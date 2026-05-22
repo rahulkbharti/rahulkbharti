@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     createTheme,
     ThemeProvider,
@@ -8,18 +8,22 @@ import {
     AppBar,
     Toolbar,
     IconButton,
+    Fab,
     Drawer,
     Stack,
     Link,
     GlobalStyles,
+    Tooltip,
+    Zoom,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
-import { Outlet, Link as RouterLink } from 'react-router-dom';
+import { Outlet, Link as RouterLink, useLocation } from 'react-router-dom';
 import DesktopSocialSidebar from './DesktopSocialSidebar';
 import Logo from './Logo';
 import LanguageSelector from './LanguageSelector';
@@ -32,6 +36,7 @@ const Links = [
     { to: '/about', label: 'About' },
     { to: '/projects', label: 'Projects' },
     { to: '/#skills', label: 'Skills' },
+    { to: '/certifications', label: 'Certifications' },
     { to: '/#blog', label: 'Blog' },
     { to: '/#contact', label: 'Contact' },
 ];
@@ -118,6 +123,68 @@ const darkTheme = createTheme({
     },
 });
 
+const HashScroll: React.FC = () => {
+    const { hash, pathname } = useLocation();
+
+    useEffect(() => {
+        if (!hash) {
+            return;
+        }
+
+        const id = hash.replace('#', '');
+        window.setTimeout(() => {
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 0);
+    }, [hash, pathname]);
+
+    return null;
+};
+
+const ScrollTopButton: React.FC = () => {
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setVisible(window.scrollY > 500);
+        };
+
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    return (
+        <Zoom in={visible}>
+            <Box
+                sx={{
+                    position: 'fixed',
+                    right: { xs: 18, md: 28 },
+                    bottom: { xs: 18, md: 28 },
+                    zIndex: (theme) => theme.zIndex.appBar + 1,
+                }}
+            >
+                <Tooltip title="Go to top">
+                    <Fab
+                        size="small"
+                        color="primary"
+                        aria-label="Go to top"
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        sx={{
+                            color: 'background.default',
+                            boxShadow: '0 12px 28px rgba(255, 180, 84, 0.22)',
+                        }}
+                    >
+                        <KeyboardArrowUpIcon />
+                    </Fab>
+                </Tooltip>
+            </Box>
+        </Zoom>
+    );
+};
+
 const Layout: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
     const toggleMenu = () => {
@@ -126,6 +193,7 @@ const Layout: React.FC = () => {
 
     return (
         <ThemeProvider theme={darkTheme}>
+            <HashScroll />
             <CssBaseline />
             <GlobalStyles styles={{
                 '@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap");': '',
@@ -146,7 +214,19 @@ const Layout: React.FC = () => {
             }}>
 
                 {/* --- Main App Bar (Responsive) --- */}
-                <AppBar position="static" color="transparent" elevation={0} sx={{ pt: 2, px: { xs: 2, md: 4 } }}>
+                <AppBar
+                    position="sticky"
+                    color="transparent"
+                    elevation={0}
+                    sx={{
+                        top: 0,
+                        zIndex: (theme) => theme.zIndex.drawer - 1,
+                        py: 2,
+                        px: { xs: 2, md: 4 },
+                        bgcolor: 'rgba(15, 17, 21, 0.58)',
+                        backdropFilter: 'blur(16px)',
+                    }}
+                >
                     <Container maxWidth="lg" disableGutters>
                         <Toolbar sx={{ p: '0 !important' }}>
                             <Logo />
@@ -217,7 +297,7 @@ const Layout: React.FC = () => {
                                 fontSize: '2.2rem',
                             }}
                         >
-                            #<Box component="span" sx={{
+                            <Box component="span" sx={{
                                 color: 'primary.main',
                                 fontWeight: 700,
                                 '&:hover': {
@@ -243,6 +323,8 @@ const Layout: React.FC = () => {
                     </IconButton>
                 </Stack>
             </Drawer>
+
+            <ScrollTopButton />
 
         </ThemeProvider>
     );

@@ -6,12 +6,13 @@ import {
     Stack,
     Card,
     CardContent,
-    Chip,
     Grid,
     Button,
     Divider,
 } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
+import ServiceCards from '../../components/ServiceCards';
+import { SERVICES } from '../../data/services';
 
 const ACHIEVEMENTS = [
     "Top 0.5% in TCS CodeVita (2024): Achieved a global rank of 1,961 out of over 537,000+ global participants in one of the world's largest competitive coding competitions.",
@@ -47,12 +48,6 @@ const METRICS = [
     { label: 'Automated Workflows', value: '100%' },
 ];
 
-const SERVICES = [
-    'SaaS MVP Development: Building secure, multi-tenant SaaS platforms from the ground up using Node.js, TypeScript, and robust relational databases.',
-    'Backend Scaling & Code Audits: Transitioning monolithic apps to microservices, optimizing slow SQL queries, implementing Redis caching, and securing REST APIs.',
-    'AI & Media Pipeline Integrations: Integrating autonomous Gemini API workflows into existing products or setting up custom video streaming/transcoding servers (SRS/FFmpeg).',
-];
-
 const OPEN_SOURCE = [
     'Autonomous Visitor Management System (VMS): Developer of an open-architected, role-based building management system built to handle granular multi-tier authorization.',
     'Custom Video Transcoding Pipeline: Open-sourced a lightweight boilerplate for integrating SRS (Simple Realtime Server) and FFmpeg for developers looking to build localized live-streaming solutions.',
@@ -80,7 +75,7 @@ const Highlights: React.FC = () => {
             <Container id="achievements" maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
                 <Box sx={{ mb: 4 }}>
                     <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 700 }}>
-                        <Box component="span" sx={{ color: 'primary.main' }}>#</Box>Key Achievements
+                        Key Achievements
                     </Typography>
                     <Typography variant="body1" sx={{ color: 'text.secondary', mt: 1, maxWidth: 760 }}>
                         Overview of the outcomes that define my backend and product work.
@@ -119,7 +114,7 @@ const Highlights: React.FC = () => {
             <Container id="timeline" maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
                 <Box sx={{ mb: 4 }}>
                     <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 700 }}>
-                        <Box component="span" sx={{ color: 'primary.main' }}>#</Box>Experience Timeline
+                        Experience Timeline
                     </Typography>
                     <Typography variant="body1" sx={{ color: 'text.secondary', mt: 1 }}>
                         Where I have focused and what I delivered.
@@ -143,7 +138,7 @@ const Highlights: React.FC = () => {
             <Container id="metrics" maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
                 <Box sx={{ mb: 4 }}>
                     <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 700 }}>
-                        <Box component="span" sx={{ color: 'primary.main' }}>#</Box>Impact Metrics
+                        Impact Metrics
                     </Typography>
                     <Typography variant="body1" sx={{ color: 'text.secondary', mt: 1 }}>
                         Measurable results across systems and delivery.
@@ -172,27 +167,24 @@ const Highlights: React.FC = () => {
 
             <Container id="services" maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
                 <Box sx={{ mb: 4 }}>
-                    <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 700 }}>
-                        <Box component="span" sx={{ color: 'primary.main' }}>#</Box>Services and Offerings
+                    <Typography
+                        variant="overline"
+                        sx={{
+                            color: 'primary.main',
+                            fontWeight: 800,
+                            letterSpacing: '0.16em',
+                        }}
+                    >
+                        Services
                     </Typography>
-                    <Typography variant="body1" sx={{ color: 'text.secondary', mt: 1 }}>
-                        Focused ways I can help you ship faster.
+                    <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 700 }}>
+                        Services
+                    </Typography>
+                    <Typography variant="body1" sx={{ color: 'text.secondary', mt: 1, maxWidth: 760 }}>
+                        Focused ways I can help you ship reliable backends, SaaS products, AI workflows, and full stack product features.
                     </Typography>
                 </Box>
-                <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
-                    {SERVICES.map((item) => (
-                        <Chip
-                            key={item}
-                            label={item}
-                            size="small"
-                            sx={{
-                                bgcolor: 'rgba(255, 180, 84, 0.12)',
-                                color: 'primary.main',
-                                border: '1px solid rgba(255, 180, 84, 0.32)',
-                            }}
-                        />
-                    ))}
-                </Stack>
+                <ServiceCards services={SERVICES.slice(0, 6)} />
                 <Button variant="outlined" component={RouterLink} to="/services" sx={{ mt: 3 }}>
                     View services
                 </Button>
@@ -201,7 +193,7 @@ const Highlights: React.FC = () => {
             <Container id="open-source" maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
                 <Box sx={{ mb: 4 }}>
                     <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 700 }}>
-                        <Box component="span" sx={{ color: 'primary.main' }}>#</Box>Open Source
+                        Open Source
                     </Typography>
                     <Typography variant="body1" sx={{ color: 'text.secondary', mt: 1 }}>
                         Projects and experiments shared with the community.
@@ -220,7 +212,7 @@ const Highlights: React.FC = () => {
             <Container id="talks" maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
                 <Box sx={{ mb: 4 }}>
                     <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 700 }}>
-                        <Box component="span" sx={{ color: 'primary.main' }}>#</Box>Talks and Writing
+                        Talks and Writing
                     </Typography>
                     <Typography variant="body1" sx={{ color: 'text.secondary', mt: 1 }}>
                         Research notes, guides, and upcoming articles.
@@ -239,7 +231,7 @@ const Highlights: React.FC = () => {
             <Container id="testimonials" maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
                 <Box sx={{ mb: 4 }}>
                     <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 700 }}>
-                        <Box component="span" sx={{ color: 'primary.main' }}>#</Box>Testimonials
+                        Testimonials
                     </Typography>
                     <Typography variant="body1" sx={{ color: 'text.secondary', mt: 1 }}>
                         Feedback from people I have worked with.

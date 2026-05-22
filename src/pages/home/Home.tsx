@@ -5,6 +5,7 @@ import { TypingEffect } from '../../components/TypingEffect';
 import Projects from '../projects/Projects';
 import Skills from '../skills/Skills';
 import Highlights from './Highlights';
+import Certifications from '../certifications/Certifications';
 import Contact from '../contact/Contact';
 import BlogList from '../blog/BlogList';
 
@@ -236,6 +237,7 @@ const Home: React.FC = () => {
             }} />
             <Skills />
             <Projects />
+            <Certifications />
             <Highlights />
             <BlogList />
             <Contact />

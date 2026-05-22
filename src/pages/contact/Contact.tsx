@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
                     variant="h2"
                     sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, mb: 2, fontWeight: 'bold' }}
                 >
-                    <Box component="span" sx={{ color: 'primary.main' }}>#</Box>Contact
+                    Contact
                 </Typography>
                 <Typography variant="body1" sx={{ color: 'text.secondary' }}>
                     Get in touch with me

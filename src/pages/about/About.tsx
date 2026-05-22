@@ -19,6 +19,25 @@ const CORE_STACK = [
     'Gemini API',
 ];
 
+const EDUCATION = [
+    {
+        institution: 'Rajkiya Engineering College, Ambedkar Nagar',
+        program: 'Bachelor of Technology, Information Technology',
+    },
+    {
+        institution: 'Board of Technical Education, Uttar Pradesh (BTEUP)',
+        program: 'Diploma, Electrical Engineering',
+        period: 'November 2020 - June 2022',
+        distinction: 'Honors',
+    },
+    {
+        institution: 'Adarsh Inter College Mahubag Ghazipur',
+        program: 'Secondary Education, Mathematics',
+        period: 'April 2017 - April 2019',
+        distinction: 'First Topper',
+    },
+];
+
 const About: React.FC = () => {
     return (
         <Container maxWidth="lg" sx={{ py: { xs: 4, md: 10 } }}>
@@ -33,78 +52,135 @@ const About: React.FC = () => {
                 </Typography>
             </Box>
 
-            <Stack spacing={5}>
-                <Box>
-                    <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
-                        What I do
-                    </Typography>
-                    <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>
-                        I love the backend: structuring databases, securing APIs, and optimizing data pipelines.
-                        I handle the full stack when needed, but I am happiest building the core that keeps a
-                        product resilient and calm under pressure.
-                    </Typography>
-                    <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
-                        {CORE_STACK.map((item) => (
-                            <Chip
-                                key={item}
-                                label={item}
-                                size="small"
-                                sx={{
-                                    bgcolor: 'rgba(255, 180, 84, 0.12)',
-                                    color: 'primary.main',
-                                    border: '1px solid rgba(255, 180, 84, 0.32)',
-                                }}
-                            />
-                        ))}
-                    </Stack>
-                </Box>
+            <Box
+                sx={{
+                    display: 'grid',
+                    gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+                    gap: { xs: 5, md: 6 },
+                    alignItems: 'start',
+                }}
+            >
+                <Stack spacing={5}>
+                    <Box>
+                        <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+                            What I do
+                        </Typography>
+                        <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>
+                            I love the backend: structuring databases, securing APIs, and optimizing data pipelines.
+                            I handle the full stack when needed, but I am happiest building the core that keeps a
+                            product resilient and calm under pressure.
+                        </Typography>
+                        <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+                            {CORE_STACK.map((item) => (
+                                <Chip
+                                    key={item}
+                                    label={item}
+                                    size="small"
+                                    sx={{
+                                        bgcolor: 'rgba(255, 180, 84, 0.12)',
+                                        color: 'primary.main',
+                                        border: '1px solid rgba(255, 180, 84, 0.32)',
+                                    }}
+                                />
+                            ))}
+                        </Stack>
+                    </Box>
 
-                <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.08)' }} />
+                    <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.08)' }} />
 
-                <Box>
-                    <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
-                        Entrepreneurial mindset
-                    </Typography>
-                    <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                        Beyond features, I build products with business viability, multi-tenant security, and
-                        user experience in mind. I created LibSpace, a multi-tenant library ERP that I designed,
-                        developed, and scaled to serve active, paying institutional clients. Shipping real software
-                        taught me a lot about product-market fit, cloud costs, and operational efficiency.
-                    </Typography>
-                </Box>
+                    <Box>
+                        <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>
+                            Education
+                        </Typography>
+                        <Stack spacing={2}>
+                            {EDUCATION.map((item) => (
+                                <Box
+                                    key={item.institution}
+                                    sx={{
+                                        pl: 2,
+                                        borderLeft: '2px solid rgba(255, 180, 84, 0.45)',
+                                    }}
+                                >
+                                    <Typography variant="h6" sx={{ fontWeight: 700 }}>
+                                        {item.institution}
+                                    </Typography>
+                                    <Typography variant="body1" sx={{ color: 'text.secondary', mt: 0.5 }}>
+                                        {item.program}
+                                    </Typography>
+                                    {item.distinction && (
+                                        <Chip
+                                            label={item.distinction}
+                                            size="small"
+                                            sx={{
+                                                mt: 1,
+                                                bgcolor: 'rgba(255, 180, 84, 0.14)',
+                                                color: 'primary.main',
+                                                border: '1px solid rgba(255, 180, 84, 0.38)',
+                                                fontWeight: 700,
+                                            }}
+                                        />
+                                    )}
+                                    {item.period && (
+                                        <Typography variant="body2" sx={{ color: 'text.secondary', mt: 0.5 }}>
+                                            {item.period}
+                                        </Typography>
+                                    )}
+                                </Box>
+                            ))}
+                        </Stack>
+                    </Box>
+                </Stack>
 
-                <Box>
-                    <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
-                        My philosophy
-                    </Typography>
-                    <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>
-                        I follow a "second brain" approach to engineering: organize knowledge, map systems, and
-                        work from clear architecture. It helps me adapt fast, solve bottlenecks, and keep the
-                        delivery pipeline clean.
-                    </Typography>
-                    <Typography variant="body1" sx={{ color: 'primary.main', fontWeight: 600 }}>
-                        Simplicity is the ultimate sophistication in system design. Build it clean, make it scalable,
-                        and always design with the end user in mind.
-                    </Typography>
-                </Box>
+                <Stack spacing={5}>
+                    <Box>
+                        <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+                            Product mindset
+                        </Typography>
+                        <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+                            Beyond features, I build products with business viability, multi-tenant security, and
+                            user experience in mind. I created LibSpace, a multi-tenant library ERP that I designed,
+                            developed, and scaled to serve active, paying institutional clients. Shipping real software
+                            taught me a lot about product-market fit, cloud costs, and operational efficiency.
+                        </Typography>
+                    </Box>
 
-                <Box>
-                    <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
-                        Looking forward
-                    </Typography>
-                    <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>
-                        Whether it is realtime video delivery, autonomous AI workflows, or the next big SaaS
-                        platform, I am always ready to push technical boundaries.
-                    </Typography>
-                    <Stack spacing={1}>
-                        {ABOUT_POINTS.map((point) => (
-                            <Typography key={point} variant="body1" sx={{ color: 'text.secondary' }}>
-                                {point}
-                            </Typography>
-                        ))}
-                    </Stack>
-                </Box>
-            </Stack>
+                    <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.08)' }} />
+
+                    <Box>
+                        <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+                            My philosophy
+                        </Typography>
+                        <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>
+                            I follow a "second brain" approach to engineering: organize knowledge, map systems, and
+                            work from clear architecture. It helps me adapt fast, solve bottlenecks, and keep the
+                            delivery pipeline clean.
+                        </Typography>
+                        <Typography variant="body1" sx={{ color: 'primary.main', fontWeight: 600 }}>
+                            Simplicity is the ultimate sophistication in system design. Build it clean, make it scalable,
+                            and always design with the end user in mind.
+                        </Typography>
+                    </Box>
+
+                    <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.08)' }} />
+
+                    <Box>
+                        <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+                            Looking forward
+                        </Typography>
+                        <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>
+                            Whether it is realtime video delivery, autonomous AI workflows, or the next big SaaS
+                            platform, I am always ready to push technical boundaries.
+                        </Typography>
+                        <Stack spacing={1}>
+                            {ABOUT_POINTS.map((point) => (
+                                <Typography key={point} variant="body1" sx={{ color: 'text.secondary' }}>
+                                    {point}
+                                </Typography>
+                            ))}
+                        </Stack>
+                    </Box>
+                </Stack>
+            </Box>
         </Container>
     );
 };

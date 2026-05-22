@@ -86,7 +86,7 @@ const Skills: React.FC = () => {
                     variant="h2"
                     sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, mb: 2, fontWeight: 'bold' }}
                 >
-                    <Box component="span" sx={{ color: 'primary.main' }}>#</Box>Skills
+                    Skills
                 </Typography>
                 <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 720 }}>
                     {OVERVIEW}

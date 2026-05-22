@@ -3,10 +3,6 @@ import { Box, Container, Typography, Stack, Card, CardContent } from '@mui/mater
 
 const PROJECTS = [
     {
-        title: 'Autonomous Visitor Management System (VMS)',
-        detail: 'Developer of an open-architected, role-based building management system built to handle granular multi-tier authorization.',
-    },
-    {
         title: 'Custom Video Transcoding Pipeline',
         detail: 'Open-sourced a lightweight boilerplate for integrating SRS (Simple Realtime Server) and FFmpeg for developers looking to build localized live-streaming solutions.',
     },

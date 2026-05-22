@@ -8,6 +8,7 @@ const Links = [
     { to: '/about', label: 'About' },
     { to: '/projects', label: 'Projects' },
     { to: '/#skills', label: 'Skills' },
+    { to: '/certifications', label: 'Certifications' },
     { to: '/#blog', label: 'Blog' },
     { to: '/#contact', label: 'Contact' },
 ];
@@ -27,7 +28,7 @@ const DesktopNav: React.FC = () => (
                     '&:hover': { color: 'primary.main' },
                 }}
             >
-                #<Box component="span" sx={{
+                <Box component="span" sx={{
                     color: 'inherit',
                     fontWeight: 600,
                 }}>{label}</Box>

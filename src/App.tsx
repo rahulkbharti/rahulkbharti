@@ -8,6 +8,7 @@ import BlogList from "./pages/blog/BlogList";
 import BlogPost from "./pages/blog/BlogPost";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
+import CertificationsPage from "./pages/certifications/CertificationsPage";
 import AchievementsPage from "./pages/sections/AchievementsPage";
 import TimelinePage from "./pages/sections/TimelinePage";
 import MetricsPage from "./pages/sections/MetricsPage";
@@ -32,6 +33,7 @@ const App: React.FC = () => {
                     <Route path="blog/:slug" element={<BlogPost />} />
                     <Route path="contact" element={<Contact />} />
                     <Route path="about" element={<About />} />
+                    <Route path="certifications" element={<CertificationsPage />} />
                     <Route path="achievements" element={<AchievementsPage />} />
                     <Route path="timeline" element={<TimelinePage />} />
                     <Route path="metrics" element={<MetricsPage />} />
