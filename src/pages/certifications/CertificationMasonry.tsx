@@ -57,9 +57,9 @@ const CertificationMasonry: React.FC<CertificationMasonryProps> = ({ certificati
                             borderRadius: 2,
                             bgcolor: 'background.paper',
                             border: featured
-                                ? '1px solid rgba(255, 180, 84, 0.32)'
+                                ? '1px solid rgba(73, 242, 165, 0.28)'
                                 : '1px solid rgba(255, 255, 255, 0.1)',
-                            boxShadow: featured ? '0 12px 30px rgba(255, 180, 84, 0.12)' : 'none',
+                            boxShadow: featured ? '0 12px 30px rgba(73, 242, 165, 0.07)' : 'none',
                             overflow: 'hidden',
                         }}
                     >

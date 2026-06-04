@@ -47,68 +47,79 @@ const darkTheme = createTheme({
     palette: {
         mode: 'dark',
         background: {
-            default: '#0f1115',
-            paper: '#151821',
+            default: '#05080d',
+            paper: '#0a1017',
         },
         primary: {
-            main: '#ffb454',
-            dark: '#e39a36',
+            main: '#49f2a5',
+            dark: '#28c77e',
         },
         secondary: {
-            main: '#5dd6c1',
+            main: '#57c7ff',
         },
         text: {
-            primary: '#f2f2f2',
-            secondary: '#b5b8c5',
+            primary: '#e6edf3',
+            secondary: '#8b9aaa',
         },
+        divider: '#1a2633',
     },
     typography: {
-        fontFamily: '"Space Grotesk", "IBM Plex Sans", sans-serif',
+        fontFamily: '"IBM Plex Sans", sans-serif',
         h1: {
             fontSize: '2.8rem',
             fontWeight: 700,
             lineHeight: 1.1,
             letterSpacing: '-0.02em',
-            color: '#f7f7f7',
+            color: '#f0f6fc',
+            fontFamily: '"Space Grotesk", sans-serif',
         },
         h2: {
             fontWeight: 700,
-            letterSpacing: '-0.01em',
-            color: '#f7f7f7',
+            letterSpacing: '-0.04em',
+            color: '#f0f6fc',
+            fontFamily: '"IBM Plex Mono", monospace',
+        },
+        h3: {
+            fontFamily: '"Space Grotesk", sans-serif',
         },
         h6: {
             fontWeight: 700,
-            color: '#f7f7f7',
+            color: '#f0f6fc',
+            fontFamily: '"IBM Plex Mono", monospace',
         },
         body1: {
             fontSize: '1.05rem',
-            color: '#b5b8c5',
+            color: '#8b9aaa',
+        },
+        button: {
+            fontFamily: '"IBM Plex Mono", monospace',
         },
     },
     components: {
         MuiButton: {
             styleOverrides: {
                 root: {
-                    borderRadius: 999,
-                    textTransform: 'none',
+                    borderRadius: 4,
+                    textTransform: 'uppercase',
                     fontWeight: 600,
-                    letterSpacing: '0.01em',
-                    paddingInline: 20,
+                    letterSpacing: '0.08em',
+                    paddingInline: 18,
+                    fontSize: '0.74rem',
                 },
                 containedPrimary: {
-                    color: '#0f1115',
-                    boxShadow: '0 10px 30px rgba(255, 180, 84, 0.2)',
+                    color: '#04100a',
+                    boxShadow: '0 0 0 1px rgba(73, 242, 165, 0.25), 0 10px 30px rgba(73, 242, 165, 0.12)',
                     '&:hover': {
-                        backgroundColor: '#ffb454',
-                        boxShadow: '0 12px 34px rgba(255, 180, 84, 0.28)',
+                        backgroundColor: '#67f7b6',
+                        boxShadow: '0 0 0 1px rgba(73, 242, 165, 0.4), 0 12px 34px rgba(73, 242, 165, 0.2)',
                     },
                 },
                 outlinedPrimary: {
-                    borderColor: 'rgba(255, 180, 84, 0.5)',
-                    color: '#ffb454',
+                    borderColor: 'rgba(73, 242, 165, 0.42)',
+                    color: '#49f2a5',
                     '&:hover': {
-                        borderColor: '#ffb454',
-                        backgroundColor: 'rgba(255, 180, 84, 0.1)',
+                        borderColor: '#49f2a5',
+                        backgroundColor: 'rgba(73, 242, 165, 0.08)',
                     },
                 },
             },
@@ -116,7 +127,65 @@ const darkTheme = createTheme({
         MuiCard: {
             styleOverrides: {
                 root: {
-                    borderRadius: 16,
+                    borderRadius: 6,
+                    backgroundColor: '#0a1017',
+                    backgroundImage: 'linear-gradient(145deg, rgba(87, 199, 255, 0.025), transparent 42%)',
+                    borderColor: '#1a2633',
+                    boxShadow: '0 18px 45px rgba(0, 0, 0, 0.2)',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: 52,
+                        height: 1,
+                        background: 'linear-gradient(90deg, #49f2a5, #57c7ff)',
+                        boxShadow: '0 0 12px rgba(73, 242, 165, 0.35)',
+                    },
+                },
+            },
+        },
+        MuiTypography: {
+            styleOverrides: {
+                h2: {
+                    '&::before': {
+                        content: '"// "',
+                        color: '#49f2a5',
+                        fontSize: '0.65em',
+                    },
+                },
+            },
+        },
+        MuiPaper: {
+            styleOverrides: {
+                rounded: {
+                    borderRadius: 6,
+                },
+            },
+        },
+        MuiChip: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 3,
+                    fontFamily: '"IBM Plex Mono", monospace',
+                    letterSpacing: '0.02em',
+                },
+            },
+        },
+        MuiOutlinedInput: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 4,
+                    backgroundColor: 'rgba(4, 9, 14, 0.72)',
+                },
+            },
+        },
+        MuiIconButton: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 4,
                 },
             },
         },
@@ -174,7 +243,8 @@ const ScrollTopButton: React.FC = () => {
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                         sx={{
                             color: 'background.default',
-                            boxShadow: '0 12px 28px rgba(255, 180, 84, 0.22)',
+                            borderRadius: 1,
+                            boxShadow: '0 0 24px rgba(73, 242, 165, 0.2)',
                         }}
                     >
                         <KeyboardArrowUpIcon />
@@ -196,8 +266,12 @@ const Layout: React.FC = () => {
             <HashScroll />
             <CssBaseline />
             <GlobalStyles styles={{
-                '@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap");': '',
-                'a': { color: 'inherit' }
+                '@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");': '',
+                'a': { color: 'inherit' },
+                '.MuiTypography-overline': {
+                    fontFamily: '"IBM Plex Mono", monospace',
+                    letterSpacing: '0.12em',
+                },
             }} />
 
             {/* Desktop-only Social Sidebar */}
@@ -221,10 +295,11 @@ const Layout: React.FC = () => {
                     sx={{
                         top: 0,
                         zIndex: (theme) => theme.zIndex.drawer - 1,
-                        py: 2,
+                        py: 1.25,
                         px: { xs: 2, md: 4 },
-                        bgcolor: 'rgba(15, 17, 21, 0.58)',
-                        backdropFilter: 'blur(16px)',
+                        bgcolor: 'rgba(5, 8, 13, 0.86)',
+                        backdropFilter: 'blur(18px)',
+                        borderBottom: '1px solid rgba(87, 199, 255, 0.13)',
                     }}
                 >
                     <Container maxWidth="lg" disableGutters>

@@ -1,148 +1,143 @@
-import React from 'react';
-import { Box, Container, Typography, Stack, Link, IconButton, Divider } from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import React from "react";
+import {
+  Box,
+  Container,
+  Divider,
+  IconButton,
+  Link,
+  Stack,
+  Typography,
+} from "@mui/material";
+import EmailIcon from "@mui/icons-material/Email";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-const Footer: React.FC = () => {
-    return (
+const QUICK_LINKS = [
+  { href: "/rahulkbharti/about", label: "about" },
+  { href: "/rahulkbharti", label: "home" },
+  { href: "/rahulkbharti/skills", label: "skills" },
+  { href: "/rahulkbharti/projects", label: "projects" },
+];
+
+const Footer: React.FC = () => (
+  <Box
+    component="footer"
+    sx={{
+      borderTop: "1px solid rgba(87, 199, 255, 0.13)",
+      py: 4,
+      mt: "auto",
+      bgcolor: "rgba(5, 8, 13, 0.92)",
+    }}
+  >
+    <Container maxWidth="lg">
+      <Stack spacing={3}>
         <Box
-            component="footer"
-            sx={{
-                borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-                py: 4,
-                mt: 'auto',
-                bgcolor: 'background.paper',
-            }}
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            gap: 2,
+            justifyContent: "space-between",
+          }}
         >
-            <Container maxWidth="lg">
-                <Stack spacing={3}>
-                    {/* Top Section: Logo and Tagline */}
-                    <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 2, justifyContent: 'space-between' }}>
-                        <Box>
-                            <Typography
-                                variant="h6"
-                                sx={{
-                                    fontWeight: 'bold',
-                                    color: 'white',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: 1,
-                                }}
-                            >
-                                <Box component="span" sx={{ color: 'primary.main' }}>Rahul</Box> Bharti
-                            </Typography>
-                            <Typography variant="body2" sx={{ color: 'text.secondary', mt: 0.5 }}>
-                                Backend Engineer | SaaS | Platform | AI
-                            </Typography>
-                        </Box>
+          <Box>
+            <Typography variant="h6" sx={{ fontWeight: 700 }}>
+              rahul<Box component="span" sx={{ color: "text.secondary" }}>@</Box>
+              <Box component="span" sx={{ color: "primary.main" }}>backend</Box>
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{
+                color: "text.secondary",
+                mt: 0.5,
+                fontFamily: '"IBM Plex Mono", monospace',
+                fontSize: "0.7rem",
+              }}
+            >
+              backend.engineer / saas / platform / ai
+            </Typography>
+          </Box>
 
-                        {/* Social Links */}
-                        <Stack direction="row" spacing={2} sx={{ alignItems: { md: 'flex-start' } }}>
-                            <IconButton
-                                href="https://github.com/rahulkbharti"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                sx={{
-                                    color: 'text.secondary',
-                                    '&:hover': { color: 'primary.main' },
-                                }}
-                            >
-                                <GitHubIcon />
-                            </IconButton>
-                            <IconButton
-                                href="https://www.linkedin.com/in/rahul-kbharti"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                sx={{
-                                    color: 'text.secondary',
-                                    '&:hover': { color: 'primary.main' },
-                                }}
-                            >
-                                <LinkedInIcon />
-                            </IconButton>
-                            <IconButton
-                                href="mailto:rahul.kbharti2002@gmail.com"
-                                sx={{
-                                    color: 'text.secondary',
-                                    '&:hover': { color: 'primary.main' },
-                                }}
-                            >
-                                <EmailIcon />
-                            </IconButton>
-                        </Stack>
-                    </Box>
-
-                    <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.08)' }} />
-
-                    {/* Bottom Section: Copyright and Links */}
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            flexDirection: { xs: 'column', md: 'row' },
-                            justifyContent: 'space-between',
-                            alignItems: { xs: 'flex-start', md: 'center' },
-                            gap: 2,
-                        }}
-                    >
-                        <Typography variant="body2" sx={{ color: 'text.secondary', display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                            © {new Date().getFullYear()} Rahul Bharti. Made with{' '}
-                            <FavoriteIcon sx={{ fontSize: '1rem', color: 'primary.main' }} />
-                        </Typography>
-
-                        {/* Quick Links */}
-                        <Stack direction="row" spacing={3}>
-                            <Link
-                                href="/rahulkbharti/about"
-                                sx={{
-                                    color: 'text.secondary',
-                                    textDecoration: 'none',
-                                    fontSize: '0.875rem',
-                                    '&:hover': { color: 'primary.main' },
-                                }}
-                            >
-                                About
-                            </Link>
-                            <Link
-                                href="/rahulkbharti"
-                                sx={{
-                                    color: 'text.secondary',
-                                    textDecoration: 'none',
-                                    fontSize: '0.875rem',
-                                    '&:hover': { color: 'primary.main' },
-                                }}
-                            >
-                                Home
-                            </Link>
-                            <Link
-                                href="/rahulkbharti/skills"
-                                sx={{
-                                    color: 'text.secondary',
-                                    textDecoration: 'none',
-                                    fontSize: '0.875rem',
-                                    '&:hover': { color: 'primary.main' },
-                                }}
-                            >
-                                Skills
-                            </Link>
-                            <Link
-                                href="/rahulkbharti/projects"
-                                sx={{
-                                    color: 'text.secondary',
-                                    textDecoration: 'none',
-                                    fontSize: '0.875rem',
-                                    '&:hover': { color: 'primary.main' },
-                                }}
-                            >
-                                Projects
-                            </Link>
-                        </Stack>
-                    </Box>
-                </Stack>
-            </Container>
+          <Stack direction="row" spacing={1}>
+            <IconButton
+              href="https://github.com/rahulkbharti"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ color: "text.secondary", "&:hover": { color: "primary.main" } }}
+            >
+              <GitHubIcon />
+            </IconButton>
+            <IconButton
+              href="https://www.linkedin.com/in/rahul-kbharti"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ color: "text.secondary", "&:hover": { color: "primary.main" } }}
+            >
+              <LinkedInIcon />
+            </IconButton>
+            <IconButton
+              href="mailto:rahul.kbharti2002@gmail.com"
+              sx={{ color: "text.secondary", "&:hover": { color: "primary.main" } }}
+            >
+              <EmailIcon />
+            </IconButton>
+          </Stack>
         </Box>
-    );
-};
+
+        <Divider sx={{ borderColor: "rgba(87, 199, 255, 0.11)" }} />
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: "space-between",
+            alignItems: { xs: "flex-start", md: "center" },
+            gap: 2,
+          }}
+        >
+          <Typography
+            variant="body2"
+            sx={{
+              color: "text.secondary",
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+              fontFamily: '"IBM Plex Mono", monospace',
+              fontSize: "0.7rem",
+            }}
+          >
+            <Box
+              component="span"
+              sx={{
+                width: 6,
+                height: 6,
+                bgcolor: "primary.main",
+                boxShadow: "0 0 10px rgba(73, 242, 165, 0.7)",
+              }}
+            />
+            © {new Date().getFullYear()} rahul@backend:~$
+          </Typography>
+
+          <Stack direction="row" spacing={{ xs: 2, sm: 3 }} flexWrap="wrap" useFlexGap>
+            {QUICK_LINKS.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                sx={{
+                  color: "text.secondary",
+                  textDecoration: "none",
+                  fontFamily: '"IBM Plex Mono", monospace',
+                  fontSize: "0.7rem",
+                  "&:hover": { color: "primary.main" },
+                }}
+              >
+                ./{item.label}
+              </Link>
+            ))}
+          </Stack>
+        </Box>
+      </Stack>
+    </Container>
+  </Box>
+);
 
 export default Footer;

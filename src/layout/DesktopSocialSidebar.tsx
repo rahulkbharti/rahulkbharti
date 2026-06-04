@@ -16,7 +16,19 @@ const DesktopSocialSidebar: React.FC = () => (
             justifyContent: 'center',
             alignItems: 'center',
             gap: 3,
-            // borderRight: '1px solid #333',
+            borderRight: '1px solid rgba(87, 199, 255, 0.12)',
+            bgcolor: 'rgba(5, 8, 13, 0.72)',
+            backdropFilter: 'blur(12px)',
+            '&::before': {
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: 2,
+                bgcolor: 'primary.main',
+                boxShadow: '0 0 16px rgba(73, 242, 165, 0.5)',
+            },
         }}
     >
         <IconButton href="https://github.com/rahulkbharti" target="_blank" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>

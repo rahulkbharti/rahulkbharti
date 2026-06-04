@@ -3,6 +3,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
 }
 * {
   box-sizing: border-box;
@@ -14,23 +15,35 @@ body {
   padding: 0;
   min-height: 100%;
   background:
-    radial-gradient(
-      1200px 600px at 10% -10%,
-      rgba(255, 180, 84, 0.18),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 500px at 90% 10%,
-      rgba(93, 214, 193, 0.12),
-      transparent 60%
-    ),
-    linear-gradient(180deg, #0f1115 0%, #12161f 60%, #0f1115 100%);
-  color: #f2f2f2;
+    linear-gradient(rgba(87, 199, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(87, 199, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 15% -10%, rgba(73, 242, 165, 0.11), transparent 28%),
+    radial-gradient(circle at 88% 8%, rgba(87, 199, 255, 0.09), transparent 24%),
+    #05080d;
+  background-size: 42px 42px, 42px 42px, auto, auto, auto;
+  color: #e6edf3;
+}
+
+body {
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, transparent 49.8%, rgba(73, 242, 165, 0.04) 50%, transparent 50.2%),
+    linear-gradient(180deg, transparent 49.8%, rgba(87, 199, 255, 0.035) 50%, transparent 50.2%);
+  background-size: 336px 336px;
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
 }
 
 ::selection {
-  background: rgba(255, 180, 84, 0.3);
-  color: #0f1115;
+  background: rgba(73, 242, 165, 0.3);
+  color: #05080d;
 }
 
 html {
@@ -41,11 +54,28 @@ html {
 .typing-cursor {
   display: inline-block;
   width: 3px;
-  height: 1rem; /* Font size ke match karein */
-  background-color: #ffb454;
+  height: 1rem;
+  background-color: #49f2a5;
   margin-left: 5px;
   animation: blink 0.8s infinite;
   vertical-align: middle;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05080d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a2a36;
+  border: 2px solid #05080d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #284456;
 }
 
 @keyframes blink {

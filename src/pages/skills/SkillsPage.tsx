@@ -84,9 +84,9 @@ const SkillsPage: React.FC = () => {
                                 label={item}
                                 size="small"
                                 sx={{
-                                    bgcolor: 'rgba(255, 180, 84, 0.12)',
+                                    bgcolor: 'rgba(73, 242, 165, 0.08)',
                                     color: 'primary.main',
-                                    border: '1px solid rgba(255, 180, 84, 0.32)',
+                                    border: '1px solid rgba(73, 242, 165, 0.28)',
                                 }}
                             />
                         ))}
@@ -110,9 +110,9 @@ const SkillsPage: React.FC = () => {
                                 label={item}
                                 size="small"
                                 sx={{
-                                    bgcolor: 'rgba(93, 214, 193, 0.12)',
+                                    bgcolor: 'rgba(87, 199, 255, 0.07)',
                                     color: 'secondary.main',
-                                    border: '1px solid rgba(93, 214, 193, 0.32)',
+                                    border: '1px solid rgba(87, 199, 255, 0.26)',
                                 }}
                             />
                         ))}

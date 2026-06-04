@@ -39,9 +39,9 @@ const ServiceCards: React.FC<ServiceCardsProps> = ({ services }) => {
                                 overflow: 'hidden',
                                 bgcolor: 'background.paper',
                                 border: service.featured
-                                    ? '1px solid rgba(255, 180, 84, 0.7)'
+                                    ? '1px solid rgba(73, 242, 165, 0.5)'
                                     : '1px solid rgba(255, 255, 255, 0.1)',
-                                boxShadow: service.featured ? '0 18px 40px rgba(255, 180, 84, 0.14)' : 'none',
+                                boxShadow: service.featured ? '0 18px 40px rgba(73, 242, 165, 0.08)' : 'none',
                             }}
                         >
                             {service.featured && (
@@ -85,9 +85,9 @@ const ServiceCards: React.FC<ServiceCardsProps> = ({ services }) => {
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        bgcolor: 'rgba(255, 180, 84, 0.1)',
+                                        bgcolor: 'rgba(73, 242, 165, 0.07)',
                                         color: 'primary.main',
-                                        border: '1px solid rgba(255, 180, 84, 0.18)',
+                                        border: '1px solid rgba(73, 242, 165, 0.2)',
                                     }}
                                 >
                                     <Icon />

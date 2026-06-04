@@ -66,11 +66,11 @@ const SKILL_GROUPS: SkillGroup[] = [
 
 const toneStyles = {
     primary: {
-        border: '1px solid rgba(255, 180, 84, 0.45)',
-        boxShadow: '0 12px 30px rgba(255, 180, 84, 0.15)'
+        border: '1px solid rgba(73, 242, 165, 0.32)',
+        boxShadow: '0 14px 34px rgba(73, 242, 165, 0.08)'
     },
     secondary: {
-        border: '1px solid rgba(93, 214, 193, 0.35)'
+        border: '1px solid rgba(87, 199, 255, 0.28)'
     },
     support: {
         border: '1px solid rgba(255, 255, 255, 0.12)'
@@ -96,18 +96,18 @@ const Skills: React.FC = () => {
                         label="Primary: Backend and Data"
                         size="small"
                         sx={{
-                            bgcolor: 'rgba(255, 180, 84, 0.12)',
+                            bgcolor: 'rgba(73, 242, 165, 0.08)',
                             color: 'primary.main',
-                            border: '1px solid rgba(255, 180, 84, 0.32)'
+                            border: '1px solid rgba(73, 242, 165, 0.28)'
                         }}
                     />
                     <Chip
                         label="Secondary: Architecture, AI, Product Delivery"
                         size="small"
                         sx={{
-                            bgcolor: 'rgba(93, 214, 193, 0.1)',
+                            bgcolor: 'rgba(87, 199, 255, 0.07)',
                             color: 'secondary.main',
-                            border: '1px solid rgba(93, 214, 193, 0.32)'
+                            border: '1px solid rgba(87, 199, 255, 0.26)'
                         }}
                     />
                     <Chip
@@ -128,8 +128,8 @@ const Skills: React.FC = () => {
                     position: 'absolute',
                     width: 100,
                     height: 100,
-                    border: '1px solid rgba(93, 214, 193, 0.3)',
-                    borderRadius: 3,
+                    border: '1px solid rgba(87, 199, 255, 0.24)',
+                    borderRadius: 1,
                     top: 100,
                     left: '8%',
                     zIndex: 0,

@@ -77,9 +77,9 @@ const About: React.FC = () => {
                                     label={item}
                                     size="small"
                                     sx={{
-                                        bgcolor: 'rgba(255, 180, 84, 0.12)',
+                                        bgcolor: 'rgba(73, 242, 165, 0.08)',
                                         color: 'primary.main',
-                                        border: '1px solid rgba(255, 180, 84, 0.32)',
+                                        border: '1px solid rgba(73, 242, 165, 0.28)',
                                     }}
                                 />
                             ))}
@@ -98,7 +98,7 @@ const About: React.FC = () => {
                                     key={item.institution}
                                     sx={{
                                         pl: 2,
-                                        borderLeft: '2px solid rgba(255, 180, 84, 0.45)',
+                                        borderLeft: '2px solid rgba(73, 242, 165, 0.4)',
                                     }}
                                 >
                                     <Typography variant="h6" sx={{ fontWeight: 700 }}>
@@ -113,9 +113,9 @@ const About: React.FC = () => {
                                             size="small"
                                             sx={{
                                                 mt: 1,
-                                                bgcolor: 'rgba(255, 180, 84, 0.14)',
+                                                bgcolor: 'rgba(73, 242, 165, 0.08)',
                                                 color: 'primary.main',
-                                                border: '1px solid rgba(255, 180, 84, 0.38)',
+                                                border: '1px solid rgba(73, 242, 165, 0.3)',
                                                 fontWeight: 700,
                                             }}
                                         />

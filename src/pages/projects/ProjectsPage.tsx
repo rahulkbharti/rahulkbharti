@@ -31,9 +31,9 @@ const CATEGORY_STYLES: Record<
     border: "rgba(117, 191, 255, 0.3)",
   },
   fullstack: {
-    accent: "#ffb454",
-    background: "rgba(255, 180, 84, 0.1)",
-    border: "rgba(255, 180, 84, 0.3)",
+    accent: "#d6b56f",
+    background: "rgba(214, 181, 111, 0.08)",
+    border: "rgba(214, 181, 111, 0.25)",
   },
   frontend: {
     accent: "#b6a6ff",
@@ -166,23 +166,23 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({ embedded = false }) => {
               onClick={() => setActiveFilter(filter)}
               sx={{
                 minHeight: 30,
-                borderRadius: 99,
+                borderRadius: 1,
                 px: 1.5,
                 py: 0.35,
                 color: isActive
                   ? style?.accent ?? "primary.main"
                   : "text.secondary",
                 bgcolor: isActive
-                  ? style?.background ?? "rgba(255, 180, 84, 0.1)"
+                  ? style?.background ?? "rgba(73, 242, 165, 0.08)"
                   : "transparent",
                 borderColor: isActive
-                  ? style?.border ?? "rgba(255, 180, 84, 0.35)"
+                  ? style?.border ?? "rgba(73, 242, 165, 0.32)"
                   : "rgba(255, 255, 255, 0.14)",
                 fontSize: "0.72rem",
                 textTransform: "none",
                 "&:hover": {
-                  bgcolor: style?.background ?? "rgba(255, 180, 84, 0.1)",
-                  borderColor: style?.border ?? "rgba(255, 180, 84, 0.35)",
+                  bgcolor: style?.background ?? "rgba(73, 242, 165, 0.08)",
+                  borderColor: style?.border ?? "rgba(73, 242, 165, 0.32)",
                   color: style?.accent ?? "primary.main",
                 },
               }}

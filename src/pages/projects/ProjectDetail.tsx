@@ -95,9 +95,9 @@ const ProjectDetail: React.FC = () => {
           size="small"
           sx={{
             mb: 1.5,
-            bgcolor: "rgba(255, 180, 84, 0.12)",
+            bgcolor: "rgba(73, 242, 165, 0.08)",
             color: "primary.main",
-            border: "1px solid rgba(255, 180, 84, 0.3)",
+            border: "1px solid rgba(73, 242, 165, 0.3)",
           }}
         />
         <Typography
@@ -126,9 +126,9 @@ const ProjectDetail: React.FC = () => {
             label={item}
             size="small"
             sx={{
-              bgcolor: "rgba(255, 180, 84, 0.12)",
+              bgcolor: "rgba(73, 242, 165, 0.08)",
               color: "primary.main",
-              border: "1px solid rgba(255, 180, 84, 0.35)",
+              border: "1px solid rgba(73, 242, 165, 0.3)",
             }}
           />
         ))}
@@ -148,7 +148,7 @@ const ProjectDetail: React.FC = () => {
               "&:hover": {
                 borderColor: "primary.main",
                 color: "primary.main",
-                bgcolor: "rgba(255, 180, 84, 0.08)",
+                bgcolor: "rgba(73, 242, 165, 0.08)",
               },
             }}
           >
@@ -165,7 +165,7 @@ const ProjectDetail: React.FC = () => {
             sx={{
               borderColor: "primary.main",
               color: "primary.main",
-              "&:hover": { bgcolor: "rgba(255, 180, 84, 0.12)" },
+              "&:hover": { bgcolor: "rgba(73, 242, 165, 0.1)" },
             }}
           >
             Live demo

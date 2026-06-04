@@ -72,8 +72,8 @@ const Contact: React.FC = () => {
                     position: 'absolute',
                     width: 100,
                     height: 100,
-                    border: '1px solid rgba(255, 180, 84, 0.3)',
-                    borderRadius: 3,
+                    border: '1px solid rgba(73, 242, 165, 0.24)',
+                    borderRadius: 1,
                     top: 120,
                     right: '10%',
                     zIndex: 0,
@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
                             transition: 'border-color 0.25s ease, box-shadow 0.25s ease',
                             '&:hover': {
                                 borderColor: 'primary.main',
-                                boxShadow: '0 10px 26px rgba(255, 180, 84, 0.12)',
+                                boxShadow: '0 10px 28px rgba(73, 242, 165, 0.08)',
                             },
                         }}
                     >
@@ -181,13 +181,13 @@ const Contact: React.FC = () => {
                                 endIcon={<SendIcon />}
                                 sx={{
                                     bgcolor: 'primary.main',
-                                    color: '#0f1115',
+                                    color: '#05080d',
                                     py: 1.5,
                                     fontSize: '1rem',
                                     fontWeight: 'bold',
                                     '&:hover': {
                                         bgcolor: 'primary.main',
-                                        boxShadow: '0 8px 20px rgba(255, 180, 84, 0.3)',
+                                        boxShadow: '0 8px 22px rgba(73, 242, 165, 0.18)',
                                     },
                                 }}
                             >
@@ -298,7 +298,7 @@ const Contact: React.FC = () => {
                             }}
                         >
                             <Typography variant="body2" sx={{ color: 'text.secondary', fontStyle: 'italic' }}>
-                                💡 I typically respond within 24-48 hours. Looking forward to connecting with you!
+                                I typically respond within 24-48 hours. Looking forward to connecting with you.
                             </Typography>
                         </Paper>
                     </Stack>

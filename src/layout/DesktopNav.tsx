@@ -23,15 +23,16 @@ const DesktopNav: React.FC = () => (
                 sx={{
                     color: 'text.secondary',
                     textDecoration: 'none',
-                    fontSize: '0.95rem',
-                    letterSpacing: '0.02em',
+                    fontFamily: '"IBM Plex Mono", monospace',
+                    fontSize: '0.76rem',
+                    letterSpacing: '0.04em',
                     '&:hover': { color: 'primary.main' },
                 }}
             >
                 <Box component="span" sx={{
                     color: 'inherit',
                     fontWeight: 600,
-                }}>{label}</Box>
+                }}>./{label.toLowerCase()}</Box>
             </Link>
         ))}
         <LanguageSelector />
