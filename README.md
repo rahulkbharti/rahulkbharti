@@ -39,6 +39,8 @@ Right now I'm deep in **Agentic AI** with LangChain & LangGraph — building age
 
 ---
 
+## `$ ls Github Trophies/`
+[![An image of @rahulbharti5's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/rahulbharti5)](https://holopin.io/@rahulbharti5)
 ## `$ ls skills/`
 
 <table>
@@ -150,7 +152,7 @@ commit 1c88f0d  chore: exploring MCP (Model Context Protocol) integrations
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=rahulkbharti&theme=tokyonight&hide_border=true)
 
-![Trophy](https://github-profile-trophy.vercel.app/?username=rahulkbharti&theme=tokyonight&no-frame=true&row=1&column=7)
+
 
 ![Contribution Graph](https://github-readme-activity-graph.vercel.app/graph?username=rahulkbharti&theme=tokyo-night&hide_border=true&area=true&custom_title=Rahul+Bharti+%7C+Always+Shipping)
 
