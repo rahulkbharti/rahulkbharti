@@ -1,188 +1,137 @@
-import React from 'react';
-import { Box, Container, Typography, Stack, Divider, Chip } from '@mui/material';
+import { Icon } from '../../components/Icon';
+import { CURRENTLY, EDUCATION, PROFILE } from '../../data/profile';
+import { LAYERS } from '../../data/layers';
+import { layerVar, useTitle } from '../../lib/ui';
+import '../pages.css';
 
-const ABOUT_POINTS = [
-    'Backend-first full stack developer focused on system architecture and clean, scalable services.',
-    'Designs multi-tenant microservices and autonomous workflows that solve real business problems.',
-    'Strong emphasis on maintainable code, database performance, and observability under load.',
-];
-
-const CORE_STACK = [
-    'Node.js',
-    'TypeScript',
-    'PostgreSQL',
-    'MongoDB',
-    'Prisma',
-    'Docker',
-    'Microservices',
-    'Realtime streaming',
-    'Gemini API',
-];
-
-const EDUCATION = [
+const PRINCIPLES = [
     {
-        institution: 'Rajkiya Engineering College, Ambedkar Nagar',
-        program: 'Bachelor of Technology, Information Technology',
+        title: 'Model the business first',
+        text: 'Good systems start from a data model that matches how the business actually works. Get that right and the API and UI almost write themselves.',
     },
     {
-        institution: 'Board of Technical Education, Uttar Pradesh (BTEUP)',
-        program: 'Diploma, Electrical Engineering',
-        period: 'November 2020 - June 2022',
-        distinction: 'Honors',
+        title: 'Boring in production',
+        text: 'Reliable, observable, predictable. The best compliment a system can get is that nobody has to think about it.',
     },
     {
-        institution: 'Adarsh Inter College Mahubag Ghazipur',
-        program: 'Secondary Education, Mathematics',
-        period: 'April 2017 - April 2019',
-        distinction: 'First Topper',
+        title: 'Simple beats clever',
+        text: 'Simplicity is the ultimate sophistication in system design. Build it clean, make it scalable, and design for the person using it.',
+    },
+    {
+        title: 'Write it down',
+        text: 'I work from a “second brain”: organised notes, mapped systems and clear architecture docs. It’s how I adapt fast and keep delivery clean.',
     },
 ];
 
-const About: React.FC = () => {
+export default function About() {
+    useTitle('About');
+
     return (
-        <Container maxWidth="lg" sx={{ py: { xs: 4, md: 10 } }}>
-            <Box sx={{ mb: 6 }}>
-                <Typography variant="h2" sx={{ fontSize: { xs: '2.2rem', md: '2.8rem' }, fontWeight: 700 }}>
-                    About Rahul Bharti
-                </Typography>
-                <Typography variant="body1" sx={{ color: 'text.secondary', mt: 2, maxWidth: 760 }}>
-                    Hi, I am Rahul Bharti. I am a full stack developer with a deep focus on backend engineering,
-                    system architecture, and building scalable software solutions from scratch. I specialize in
-                    designing robust, multi-tenant platforms that stay fast and reliable as they grow.
-                </Typography>
-            </Box>
+        <div className="container page about">
+            <aside className="about__card">
+                <div className="about__avatar" aria-hidden="true">
+                    <span>RB</span>
+                    <i style={layerVar('ui')} />
+                    <i style={layerVar('api')} />
+                    <i style={layerVar('data')} />
+                </div>
+                <h1>{PROFILE.name}</h1>
+                <p>
+                    {PROFILE.role}
+                    <br />
+                    at {PROFILE.company}
+                </p>
+                <div className="about__links">
+                    <a href={PROFILE.resume} target="_blank" rel="noreferrer" className="btn btn--primary btn--sm">
+                        <Icon name="download" size={16} /> Résumé
+                    </a>
+                    <a href={PROFILE.github} target="_blank" rel="noreferrer" className="icon-button" aria-label="GitHub">
+                        <Icon name="github" />
+                    </a>
+                    <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" className="icon-button" aria-label="LinkedIn">
+                        <Icon name="linkedin" />
+                    </a>
+                    <a href={`mailto:${PROFILE.email}`} className="icon-button" aria-label="Email">
+                        <Icon name="mail" />
+                    </a>
+                </div>
+            </aside>
 
-            <Box
-                sx={{
-                    display: 'grid',
-                    gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
-                    gap: { xs: 5, md: 6 },
-                    alignItems: 'start',
-                }}
-            >
-                <Stack spacing={5}>
-                    <Box>
-                        <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
-                            What I do
-                        </Typography>
-                        <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>
-                            I love the backend: structuring databases, securing APIs, and optimizing data pipelines.
-                            I handle the full stack when needed, but I am happiest building the core that keeps a
-                            product resilient and calm under pressure.
-                        </Typography>
-                        <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
-                            {CORE_STACK.map((item) => (
-                                <Chip
-                                    key={item}
-                                    label={item}
-                                    size="small"
-                                    sx={{
-                                        bgcolor: 'rgba(73, 242, 165, 0.08)',
-                                        color: 'primary.main',
-                                        border: '1px solid rgba(73, 242, 165, 0.28)',
-                                    }}
-                                />
-                            ))}
-                        </Stack>
-                    </Box>
+            <div className="about__main">
+                <p className="about__lede">
+                    I like owning a feature from the first sketch to the production dashboard — and{' '}
+                    <span className="serif">every layer in between.</span>
+                </p>
 
-                    <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.08)' }} />
+                <div className="prose-plain">
+                    <p>
+                        I started on the backend — databases, APIs, data pipelines — and grew outward until I could own
+                        whole products. I built <a href={PROFILE.libspace}>LibSpace</a>, a multi-tenant library ERP, on my
+                        own and took it to paying institutions. Shipping real software taught me as much about product–market
+                        fit, cloud costs and operational efficiency as it did about code.
+                    </p>
+                    <p>
+                        Today I’m a {PROFILE.role.toLowerCase()} at {PROFILE.company}, where I joined as an intern and was
+                        moved to full-time within three months. Outside work I go deep on realtime video, WebRTC and AI
+                        agents — usually by building a small project around whatever I’m trying to understand.
+                    </p>
+                </div>
 
-                    <Box>
-                        <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>
-                            Education
-                        </Typography>
-                        <Stack spacing={2}>
-                            {EDUCATION.map((item) => (
-                                <Box
-                                    key={item.institution}
-                                    sx={{
-                                        pl: 2,
-                                        borderLeft: '2px solid rgba(73, 242, 165, 0.4)',
-                                    }}
-                                >
-                                    <Typography variant="h6" sx={{ fontWeight: 700 }}>
-                                        {item.institution}
-                                    </Typography>
-                                    <Typography variant="body1" sx={{ color: 'text.secondary', mt: 0.5 }}>
-                                        {item.program}
-                                    </Typography>
-                                    {item.distinction && (
-                                        <Chip
-                                            label={item.distinction}
-                                            size="small"
-                                            sx={{
-                                                mt: 1,
-                                                bgcolor: 'rgba(73, 242, 165, 0.08)',
-                                                color: 'primary.main',
-                                                border: '1px solid rgba(73, 242, 165, 0.3)',
-                                                fontWeight: 700,
-                                            }}
-                                        />
-                                    )}
-                                    {item.period && (
-                                        <Typography variant="body2" sx={{ color: 'text.secondary', mt: 0.5 }}>
-                                            {item.period}
-                                        </Typography>
-                                    )}
-                                </Box>
-                            ))}
-                        </Stack>
-                    </Box>
-                </Stack>
+                <section className="about__section">
+                    <h2>How I work</h2>
+                    <ol className="principles">
+                        {PRINCIPLES.map((principle, index) => (
+                            <li key={principle.title}>
+                                <span className="mono">{String(index + 1).padStart(2, '0')}</span>
+                                <h3>{principle.title}</h3>
+                                <p>{principle.text}</p>
+                            </li>
+                        ))}
+                    </ol>
+                </section>
 
-                <Stack spacing={5}>
-                    <Box>
-                        <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
-                            Product mindset
-                        </Typography>
-                        <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                            Beyond features, I build products with business viability, multi-tenant security, and
-                            user experience in mind. I created LibSpace, a multi-tenant library ERP that I designed,
-                            developed, and scaled to serve active, paying institutional clients. Shipping real software
-                            taught me a lot about product-market fit, cloud costs, and operational efficiency.
-                        </Typography>
-                    </Box>
+                <section className="about__section">
+                    <h2>Right now I’m exploring</h2>
+                    <ul className="now-list">
+                        {CURRENTLY.map((item) => (
+                            <li key={item}>{item}</li>
+                        ))}
+                    </ul>
+                </section>
 
-                    <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.08)' }} />
+                <section className="about__section">
+                    <h2>Toolbox, by layer</h2>
+                    <dl className="toolbox">
+                        {LAYERS.map((layer) => (
+                            <div key={layer.id} style={layerVar(layer.id)}>
+                                <dt>
+                                    <i className="dot" />
+                                    {layer.name}
+                                </dt>
+                                <dd>{layer.tools.join(', ')}</dd>
+                            </div>
+                        ))}
+                    </dl>
+                </section>
 
-                    <Box>
-                        <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
-                            My philosophy
-                        </Typography>
-                        <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>
-                            I follow a "second brain" approach to engineering: organize knowledge, map systems, and
-                            work from clear architecture. It helps me adapt fast, solve bottlenecks, and keep the
-                            delivery pipeline clean.
-                        </Typography>
-                        <Typography variant="body1" sx={{ color: 'primary.main', fontWeight: 600 }}>
-                            Simplicity is the ultimate sophistication in system design. Build it clean, make it scalable,
-                            and always design with the end user in mind.
-                        </Typography>
-                    </Box>
-
-                    <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.08)' }} />
-
-                    <Box>
-                        <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
-                            Looking forward
-                        </Typography>
-                        <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>
-                            Whether it is realtime video delivery, autonomous AI workflows, or the next big SaaS
-                            platform, I am always ready to push technical boundaries.
-                        </Typography>
-                        <Stack spacing={1}>
-                            {ABOUT_POINTS.map((point) => (
-                                <Typography key={point} variant="body1" sx={{ color: 'text.secondary' }}>
-                                    {point}
-                                </Typography>
-                            ))}
-                        </Stack>
-                    </Box>
-                </Stack>
-            </Box>
-        </Container>
+                <section className="about__section">
+                    <h2>Education</h2>
+                    <ol className="education">
+                        {EDUCATION.map((item) => (
+                            <li key={item.school}>
+                                <span className="mono">{item.period}</span>
+                                <div>
+                                    <h3>{item.program}</h3>
+                                    <p>
+                                        {item.school}
+                                        {item.note && <span className="chip">{item.note}</span>}
+                                    </p>
+                                </div>
+                            </li>
+                        ))}
+                    </ol>
+                </section>
+            </div>
+        </div>
     );
-};
-
-export default About;
+}

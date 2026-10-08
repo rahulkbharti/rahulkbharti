@@ -1,80 +1,55 @@
-import React, { useMemo } from 'react';
-import { Container, Box, Typography, Card, CardContent, CardMedia, Chip, Stack, Button } from '@mui/material';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import { Link as RouterLink } from 'react-router-dom';
-import { POSTS } from '../../data/blog';
+import { Link } from 'react-router-dom';
+import { Icon } from '../../components/Icon';
+import { DRAFTS, formatDate, POSTS } from '../../data/blog';
+import { useTitle } from '../../lib/ui';
+import '../pages.css';
 
-const getStoredLikes = (postId: string, baseline: number) => {
-    const raw = localStorage.getItem(`blog:likes:${postId}`);
-    if (!raw) return { liked: false, count: baseline };
-    try { return JSON.parse(raw) as { liked: boolean; count: number }; } catch { return { liked: false, count: baseline }; }
-};
-
-const BlogList: React.FC = () => {
-    const items = useMemo(() => POSTS.slice().sort((a, b) => (a.date < b.date ? 1 : -1)), []);
+export default function BlogList() {
+    useTitle('Writing');
+    const posts = [...POSTS].sort((a, b) => b.date.localeCompare(a.date));
 
     return (
-        <Container id="blog" maxWidth="lg" sx={{ py: { xs: 4, md: 8 } }}>
-            {/* Header */}
-            <Box sx={{ mb: 6 }}>
-                <Typography variant="h2" sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, mb: 2, fontWeight: 'bold' }}>
-                    Blog
-                </Typography>
-                <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                    Thoughts and notes on engineering
-                </Typography>
-            </Box>
+        <div className="container page">
+            <header className="page-head">
+                <p className="eyebrow">
+                    <span className="eyebrow__index">log</span>Writing
+                </p>
+                <h1>
+                    Notes from <span className="serif">the workbench.</span>
+                </h1>
+                <p className="page-head__lede">Long-form explanations of things I had to understand properly to build.</p>
+            </header>
 
-            <Stack spacing={3}>
-                {items.map((post) => {
-                    const like = getStoredLikes(post.id, post.likes);
-                    return (
-                        <Card key={post.id} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, border: '1px solid rgba(255, 255, 255, 0.08)', bgcolor: 'background.paper', overflow: 'hidden' }}>
-                            {post.coverImage && (
-                                <CardMedia component="img" image={post.coverImage} alt={post.title} sx={{ width: { md: 260 }, height: { xs: 180, md: 'auto' }, objectFit: 'cover' }} />
-                            )}
-                            <CardContent sx={{ flex: 1 }}>
-                                <Typography component={RouterLink} to={`/blog/${post.slug}`} variant="h5" sx={{ color: 'white', textDecoration: 'none', fontWeight: 700, '&:hover': { color: 'primary.main' } }}>
-                                    {post.title}
-                                </Typography>
-                                <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block', mt: 0.5 }}>
-                                    {new Date(post.date).toLocaleDateString()}
-                                </Typography>
-                                <Stack direction="row" spacing={1} sx={{ mt: 1, flexWrap: 'wrap' }}>
-                                    {post.tags.map((t) => (
-                                        <Chip
-                                            key={t}
-                                            label={t}
-                                            size="small"
-                                            sx={{
-                                                bgcolor: 'rgba(73, 242, 165, 0.08)',
-                                                color: 'primary.main',
-                                                border: '1px solid rgba(73, 242, 165, 0.28)'
-                                            }}
-                                        />
+            <ul className="post-list">
+                {posts.map((post) => (
+                    <li key={post.slug}>
+                        <Link to={`/blog/${post.slug}`} className="post-row">
+                            <span className="post-row__date mono">{formatDate(post.date)}</span>
+                            <span className="post-row__main">
+                                <span className="post-row__title">{post.title}</span>
+                                <span className="post-row__excerpt">{post.excerpt}</span>
+                                <span className="chips">
+                                    {post.tags.map((tag) => (
+                                        <span key={tag} className="chip">
+                                            {tag}
+                                        </span>
                                     ))}
-                                </Stack>
-                                <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1.5 }}>
-                                    {post.excerpt}
-                                </Typography>
-
-                                <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
-                                    <Button component={RouterLink} to={`/blog/${post.slug}`} variant="outlined" size="small">
-                                        Read more
-                                    </Button>
-                                    <Stack direction="row" spacing={0.5} alignItems="center" sx={{ color: 'text.secondary' }}>
-                                        {like.liked ? <FavoriteIcon sx={{ color: 'primary.main', fontSize: 18 }} /> : <FavoriteBorderIcon sx={{ fontSize: 18 }} />}
-                                        <Typography variant="caption">{like.count}</Typography>
-                                    </Stack>
-                                </Stack>
-                            </CardContent>
-                        </Card>
-                    );
-                })}
-            </Stack>
-        </Container>
+                                </span>
+                            </span>
+                            <Icon name="arrowRight" className="post-row__arrow" />
+                        </Link>
+                    </li>
+                ))}
+                {DRAFTS.map((draft) => (
+                    <li key={draft} className="post-row post-row--draft">
+                        <span className="post-row__date mono">Coming soon</span>
+                        <span className="post-row__main">
+                            <span className="post-row__title">{draft}</span>
+                        </span>
+                        <span className="chip">draft</span>
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
-};
-
-export default BlogList;
+}
