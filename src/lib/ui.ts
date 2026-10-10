@@ -1,4 +1,4 @@
-import { useEffect, type CSSProperties } from 'react';
+import { useEffect, useSyncExternalStore, type CSSProperties } from 'react';
 import type { LayerId } from '../data/layers';
 import { PROFILE } from '../data/profile';
 
@@ -38,4 +38,17 @@ export function useTitle(title?: string) {
     useEffect(() => {
         document.title = title ? `${title} · ${PROFILE.name}` : BASE_TITLE;
     }, [title]);
+}
+
+/** Live result of a CSS media query. */
+export function useMediaQuery(query: string) {
+    return useSyncExternalStore(
+        (onChange) => {
+            const list = window.matchMedia(query);
+            list.addEventListener('change', onChange);
+            return () => list.removeEventListener('change', onChange);
+        },
+        () => window.matchMedia(query).matches,
+        () => false,
+    );
 }

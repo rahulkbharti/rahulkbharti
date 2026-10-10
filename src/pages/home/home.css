@@ -3,16 +3,35 @@
    ========================================================================== */
 
 .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+}
+
+/* The system canvas spans the whole hero and fades into the next section. */
+.hero__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 74%, transparent);
+  mask-image: linear-gradient(to bottom, #000 74%, transparent);
+}
+
+.hero__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: fade-in 1.6s 0.2s ease both;
+}
+
+.hero__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   align-items: center;
   gap: clamp(24px, 4vw, 64px);
   min-height: calc(100svh - var(--header-h));
   padding-block: clamp(40px, 6vw, 72px) clamp(56px, 7vw, 96px);
-}
-
-.hero__copy {
-  animation: rise-in 0.7s var(--ease) both;
 }
 
 .hero__status {
@@ -58,11 +77,23 @@
   line-height: 0.96;
 }
 
+.hero__word {
+  display: inline-block;
+}
+
 .hero__title-accent {
-  display: inline;
   font-size: 1.04em;
   letter-spacing: -0.02em;
-  background: var(--layer-gradient);
+}
+
+/* Each word paints its own quarter of the gradient (one per word in the phrase),
+   so the words can animate on their own and still read as one sweep.
+   The padding keeps italic overhang and descenders inside the painted box. */
+.hero__word--accent {
+  padding: 0.02em 0.08em 0.14em 0.02em;
+  margin: -0.02em -0.08em -0.14em -0.02em;
+  background-image: var(--layer-gradient);
+  background-size: 400% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -80,6 +111,14 @@
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 36px;
+}
+
+.hero__cta svg {
+  transition: transform 0.25s var(--ease);
+}
+
+.hero__cta:hover svg {
+  transform: translateX(3px);
 }
 
 .hero__facts {
@@ -115,183 +154,241 @@
 }
 
 .hero__visual {
-  animation: fade-in 1s 0.15s var(--ease) both;
-}
-
-/* Isometric stack ---------------------------------------------------------- */
-
-.iso {
-  --size: clamp(180px, 21vw, 250px);
-  --gap: calc(var(--size) * 0.29);
   display: grid;
-  justify-items: center;
-  gap: 8px;
+  grid-template-rows: minmax(320px, 1fr) auto;
+  align-self: stretch;
 }
 
-.iso[data-active] {
-  --gap: calc(var(--size) * 0.38);
+/* Empty box the canvas centres the system graph on. */
+.hero__stage {
+  min-height: 320px;
 }
 
-.iso__scene {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  height: calc(var(--size) * 2.05);
+.hero__trace {
+  justify-self: end;
+  width: min(100%, 440px);
+  margin-top: -28px;
+  perspective: 1000px;
 }
 
-.iso__stack {
-  position: relative;
-  width: var(--size);
-  height: var(--size);
-  transform-style: preserve-3d;
-  /* Orthographic isometric view: no perspective on the parent. */
-  transform: translateY(calc(var(--gap) * 1.25)) rotateX(58deg) rotateZ(-45deg);
-  transition: transform 0.7s var(--ease);
-}
+/* Request trace ------------------------------------------------------------ */
 
-.iso__plate {
-  position: absolute;
-  inset: 0;
-  transform-style: preserve-3d;
-  transform: translateZ(calc(var(--i) * var(--gap)));
-  transition: transform 0.7s var(--ease), opacity 0.35s ease;
-  cursor: pointer;
-}
-
-/* Slab thickness */
-.iso__plate::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  background: color-mix(in oklab, var(--c) 70%, #000);
-  opacity: 0.55;
-  transform: translateZ(-9px);
-}
-
-.iso__face {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 4px;
-  padding: 18px 20px;
-  border: 1.5px solid color-mix(in oklab, var(--c) 80%, var(--ink));
-  border-radius: 20px;
-  background:
-    linear-gradient(color-mix(in oklab, var(--c) 18%, transparent) 1px, transparent 1px) 0 0 / 22px 22px,
-    linear-gradient(90deg, color-mix(in oklab, var(--c) 18%, transparent) 1px, transparent 1px) 0 0 / 22px 22px,
-    color-mix(in srgb, color-mix(in oklab, var(--c) 16%, var(--surface)) 88%, transparent);
-  transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.iso__label {
-  font-family: var(--font-display);
-  font-size: calc(var(--size) * 0.16);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 0.9;
-  color: color-mix(in oklab, var(--c) 75%, var(--ink));
-}
-
-.iso__tech {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--ink-2);
-  white-space: nowrap;
-}
-
-.iso[data-active] .iso__plate:not(.is-on) {
-  opacity: 0.35;
-}
-
-.iso__plate.is-on {
-  transform: translateZ(calc(var(--i) * var(--gap) + 16px));
-}
-
-.iso__plate.is-on .iso__face {
-  box-shadow: 0 0 0 4px color-mix(in oklab, var(--c) 25%, transparent);
-}
-
-/* The request packet rides down the front edge of the stack and back up.
-   The plates' front corner is local (0, 100%); offsetting outward keeps it in view. */
-.iso__packet {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 18px;
-  height: 18px;
-  margin: 8px 0 0 -26px;
-  border-radius: 5px;
-  background: var(--ink);
-  box-shadow: 0 0 0 5px color-mix(in oklab, var(--ink) 14%, transparent);
-  animation: packet 5.2s var(--ease) infinite;
-  pointer-events: none;
-}
-
-@keyframes packet {
-  0% { transform: translateZ(calc(var(--gap) * 3 + 70px)); opacity: 0; }
-  8% { opacity: 1; }
-  42%, 58% { transform: translateZ(6px); opacity: 1; }
-  92% { opacity: 1; }
-  100% { transform: translateZ(calc(var(--gap) * 3 + 70px)); opacity: 0; }
-}
-
-.iso__legend {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
-  width: min(100%, 520px);
-}
-
-.iso__legend button {
-  display: grid;
-  gap: 2px;
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--c);
-  border-radius: 10px;
-  background: var(--surface);
-  text-align: left;
-  transition: transform 0.25s var(--ease), border-color 0.2s, box-shadow 0.2s;
-}
-
-.iso__legend button:hover,
-.iso__legend button.is-on {
-  transform: translateY(-2px);
-  border-color: color-mix(in oklab, var(--c) 60%, var(--line));
-  box-shadow: 0 10px 22px -16px var(--c);
-}
-
-.iso__legend-index {
-  font-size: 10px;
-  color: var(--ink-3);
-}
-
-.iso__legend-name {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.iso__legend-tech {
+.trace {
+  margin: 0;
   overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  box-shadow: var(--shadow);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.trace__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.trace__method {
+  flex: none;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: color-mix(in oklab, var(--l-api) 15%, transparent);
+  color: color-mix(in oklab, var(--l-api) 78%, var(--ink));
   font-size: 11px;
-  color: var(--ink-3);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.trace__path {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+.trace__status {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink-3);
+  transition: color 0.3s;
+}
+
+.trace__led {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--line-strong);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.trace[data-state='live'] .trace__status {
+  color: var(--ink-2);
+}
+
+.trace[data-state='live'] .trace__led {
+  background: var(--l-api);
+  animation: blink 0.8s ease-in-out infinite alternate;
+}
+
+.trace[data-state='done'] .trace__status {
+  color: color-mix(in oklab, var(--l-data) 72%, var(--ink));
+}
+
+.trace[data-state='done'] .trace__led {
+  background: var(--l-data);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--l-data) 20%, transparent);
+}
+
+@keyframes blink {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+.trace__ruler,
+.trace__span {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr) minmax(84px, 30%) 32px;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.trace__ruler {
+  padding: 10px 16px 2px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.trace__ruler > :first-child {
+  grid-column: 1 / 3;
+}
+
+.trace__ruler > :last-child {
+  text-align: right;
+}
+
+.trace__ticks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.trace__spans {
+  padding: 2px 8px 8px;
+}
+
+.trace__span {
+  width: 100%;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink-3);
+  text-align: left;
+  transition: background-color 0.2s, color 0.3s;
+}
+
+.trace__span[data-open] {
+  color: var(--ink-2);
+}
+
+.trace__span:hover,
+.trace__span[data-focus] {
+  background: color-mix(in oklab, var(--c) 10%, transparent);
+  color: var(--ink);
+}
+
+.trace__svc {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+}
+
+.trace__svc::before {
+  content: '';
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--c);
+  opacity: 0.45;
+  transition: opacity 0.3s;
+}
+
+.trace__span[data-open] .trace__svc::before {
+  opacity: 1;
+}
+
+.trace__op {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--ink-3);
+}
+
+.trace__track {
+  position: relative;
+  height: 8px;
+  border-radius: 4px;
+  background: color-mix(in oklab, var(--line) 55%, transparent);
+}
+
+.trace__bar {
+  position: absolute;
+  inset-block: 0;
+  min-width: 3px;
+  border-radius: 4px;
+  background: var(--c);
+  transform-origin: left center;
+}
+
+.trace__ms {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.trace__foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+  padding: 10px 16px 11px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.trace__hint {
+  color: var(--ink-2);
+}
+
 @media (max-width: 960px) {
-  .hero {
+  .hero__inner {
     grid-template-columns: minmax(0, 1fr);
     min-height: 0;
   }
 
-  .iso {
-    --size: clamp(150px, 40vw, 220px);
+  .hero__visual {
+    grid-template-rows: auto auto;
+  }
+
+  .hero__stage {
+    height: clamp(300px, 72vw, 420px);
+    min-height: 0;
+  }
+
+  .hero__trace {
+    justify-self: center;
+    margin-top: -20px;
   }
 }
 
@@ -307,8 +404,10 @@
     border-bottom: 1px solid var(--line);
   }
 
-  .iso__legend {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .trace__ruler,
+  .trace__span {
+    grid-template-columns: 76px minmax(0, 1fr) 56px 28px;
+    column-gap: 8px;
   }
 }
 
